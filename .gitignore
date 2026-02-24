@@ -1,0 +1,19 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Gemini/Antigravity artifacts
+.gemini/
+brain/
+artifacts/
+
+# Logs
+*.log
+
+# Scripts dependencies (if any)
+node_modules/
+__pycache__/
+*.pyc
+
+# Local config
+.env

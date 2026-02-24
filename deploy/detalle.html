@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Detalle del Programa - ConsultorIA</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary: #0f172a;
+            --secondary: #334155;
+            --accent: #3b82f6;
+            --accent-dark: #2563eb;
+            --background: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --scale: 1;
+        }
+
+        @media (max-width: 500px) or (max-height: 800px) {
+            :root {
+                --scale: 0.9;
+            }
+        }
+
+        @media (max-width: 400px) or (max-height: 700px) {
+            :root {
+                --scale: 0.82;
+            }
+        }
+
+        @media (max-height: 600px) {
+            :root {
+                --scale: 0.72;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            padding: 20px 10px;
+            overflow-y: auto;
+        }
+
+        .flyer {
+            width: 100%;
+            max-width: calc(450px * var(--scale));
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 40px 100px -20px rgba(15, 23, 42, 0.25);
+            display: flex;
+            flex-direction: column;
+            border: calc(8px * var(--scale)) solid var(--white);
+            margin: auto;
+        }
+
+        .header {
+            padding: calc(20px * var(--scale)) calc(24px * var(--scale)) calc(15px * var(--scale));
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: calc(1.4rem * var(--scale));
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .content {
+            padding: calc(15px * var(--scale)) calc(20px * var(--scale));
+            display: flex;
+            flex-direction: column;
+            gap: calc(12px * var(--scale));
+        }
+
+        .session-card {
+            background: var(--background);
+            padding: calc(12px * var(--scale));
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .session-card h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: calc(0.95rem * var(--scale));
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .session-card p {
+            font-size: calc(0.8rem * var(--scale));
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .footer {
+            padding: calc(15px * var(--scale)) calc(24px * var(--scale)) calc(25px * var(--scale));
+            display: flex;
+            flex-direction: column;
+            gap: calc(10px * var(--scale));
+        }
+
+        .btn {
+            display: flex;
+            width: 100%;
+            padding: calc(12px * var(--scale));
+            border-radius: 8px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: calc(0.9rem * var(--scale));
+            text-decoration: none;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2);
+        }
+
+        .btn-outline {
+            background: var(--white);
+            color: var(--secondary);
+            border: 1px solid #cbd5e1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flyer">
+        <div class="header">
+            <h1>Contenido del Programa</h1>
+        </div>
+        <div class="content">
+            <div class="session-card">
+                <h2>Sesión 1: Tu Identidad Digital</h2>
+                <p>Crea tu "Manual de Identidad" para que la IA responda con tu cargo, tono y experiencia profesional.
+                    Deja de usarla como un buscador.</p>
+            </div>
+            <div class="session-card">
+                <h2>Sesión 2: Análisis con Rayos X</h2>
+                <p>Audita contratos y reportes complejos en segundos. Convierte fotos de pizarras o tablas impresas en
+                    datos editables y planes de acción.</p>
+            </div>
+            <div class="session-card">
+                <h2>Sesión 3: Investigación Estratégica</h2>
+                <p>Uso de Deep Research para navegar, comparar competencia y generar tablas. Aprende a clonar tu estilo
+                    de redacción ejecutiva.</p>
+            </div>
+            <div class="session-card">
+                <h2>Sesión 4: Tu Empleado Digital</h2>
+                <p>Crea Agentes que trabajan 24/7. Construye un "Asistente de Proyectos" que conoce tus metodologías y
+                    conecta tus correos.</p>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="https://wa.me/56996829223?text=Hola,%20quiero%20reservar%20mi%20cupo%20para%20la%20consultoría"
+                class="btn btn-primary"> RESERVAR CUPO 🚀</a>
+            <a href="index.html" class="btn btn-outline">← VOLVER</a>
+        </div>
+    </div>
+</body>
+
+</html>
