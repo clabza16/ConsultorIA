@@ -132,7 +132,7 @@ nav {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 280px;
+    width: auto;
 }
 
 .btn-whatsapp:hover {
@@ -148,7 +148,7 @@ nav {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 280px;
+    width: auto;
 }
 
 .btn-email:hover {
@@ -666,6 +666,7 @@ footer {
         text-align: center;
         padding: 1.1rem;
         font-size: 1rem;
+        min-width: 0 !important;
     }
 
     /* Cards */
