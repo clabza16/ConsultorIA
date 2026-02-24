@@ -89,55 +89,50 @@
         .brand {
             font-family: 'Outfit', sans-serif;
             font-weight: 800;
-            font-size: calc(1rem * var(--scale));
+            font-size: calc(0.9rem * var(--scale));
             color: var(--primary);
-            margin-bottom: calc(5px * var(--scale));
+            margin-bottom: calc(10px * var(--scale));
             display: block;
+            opacity: 0.7;
         }
 
         .brand span {
             color: var(--accent);
         }
 
-        h1 {
-            font-family: 'Outfit', sans-serif;
-            font-size: calc(1.6rem * var(--scale));
-            line-height: 1.1;
-            font-weight: 800;
-            color: var(--primary);
-            letter-spacing: -0.04em;
+        .hook-container {
             margin-top: calc(5px * var(--scale));
+            display: flex;
+            flex-direction: column;
+            gap: calc(8px * var(--scale));
         }
 
-        .empower-badge {
-            display: inline-block;
-            background: var(--primary);
-            color: var(--white);
-            padding: calc(4px * var(--scale)) calc(12px * var(--scale));
-            border-radius: 50px;
-            font-size: calc(0.75rem * var(--scale));
-            font-weight: 700;
-            margin-top: calc(10px * var(--scale));
-            margin-bottom: calc(5px * var(--scale));
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: calc(1.4rem * var(--scale));
+            line-height: 1.2;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.02em;
         }
 
         .no-tech-badge {
             display: inline-block;
             background: rgba(59, 130, 246, 0.1);
             color: var(--accent);
-            padding: calc(4px * var(--scale)) calc(12px * var(--scale));
+            padding: calc(6px * var(--scale)) calc(16px * var(--scale));
             border-radius: 50px;
-            font-size: calc(0.7rem * var(--scale));
+            font-size: calc(0.75rem * var(--scale));
             font-weight: 800;
-            margin-top: calc(5px * var(--scale));
+            margin-top: calc(15px * var(--scale));
             border: 1px solid rgba(59, 130, 246, 0.3);
         }
 
         .content {
-            padding: calc(20px * var(--scale)) calc(24px * var(--scale));
+            padding: calc(25px * var(--scale)) calc(24px * var(--scale));
             display: flex;
             flex-direction: column;
-            gap: calc(12px * var(--scale));
+            gap: calc(15px * var(--scale));
             flex: 1;
         }
 
@@ -157,12 +152,13 @@
 
         .skill-item {
             background: var(--background);
-            padding: calc(10px * var(--scale)) calc(14px * var(--scale));
-            border-radius: 12px;
-            border: 1px solid rgba(59, 130, 246, 0.1);
+            padding: calc(15px * var(--scale)) calc(18px * var(--scale));
+            border-radius: 16px;
+            border: 1px solid rgba(59, 130, 246, 0.08);
             display: flex;
             align-items: center;
-            gap: calc(12px * var(--scale));
+            gap: calc(15px * var(--scale));
+            transition: transform 0.2s ease;
         }
 
         .skill-item i {
@@ -285,49 +281,37 @@
     <div class="flyer">
         <div class="header">
             <span class="brand">Consultor<span>IA</span></span>
-            <h1>2 Sesiones de<br>Alto Impacto</h1>
-            <span class="empower-badge">PROGRAMA EJECUTIVO</span>
-            <br>
-            <span class="no-tech-badge">✨ SIN EXPERIENCIA PREVIA</span>
+            <div class="hook-container">
+                <h1>¿Sientes que la tecnología no es lo tuyo?</h1>
+                <h1 style="color: var(--accent);">¿Quieres recuperar tu tiempo?</h1>
+                <h1 style="font-size: calc(1.1rem * var(--scale)); opacity: 0.8;">Domina la IA sin saber programar.</h1>
+            </div>
+            <span class="no-tech-badge">✨ DISEÑADO PARA NO-TÉCNICOS</span>
         </div>
 
         <div class="content">
-            <p class="section-tag">Tu Evolución</p>
+            <p class="section-tag">Tu Nueva Realidad</p>
 
             <div class="skills-infographic">
                 <div class="skill-item">
-                    <i>🧠</i>
+                    <i>🤖</i>
                     <div class="skill-text">
                         <h3>Tu Clon Digital</h3>
-                        <p>La IA escribe y piensa como tú.</p>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <i>🔍</i>
-                    <div class="skill-text">
-                        <h3>Investigador Experto 24/7</h3>
-                        <p>Análisis y procesamiento de información estratégica.</p>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <i>🎨</i>
-                    <div class="skill-text">
-                        <h3>Diseño Pro Automático</h3>
-                        <p>Imágenes y presentaciones de alto nivel.</p>
+                        <p>Delegar tareas mecánicas a una IA que piensa y escribe como tú.</p>
                     </div>
                 </div>
                 <div class="skill-item">
                     <i>⚡</i>
                     <div class="skill-text">
-                        <h3>Tu Equipo de Asistentes</h3>
-                        <p>Automatización de tus tareas repetitivas.</p>
+                        <h3>Gestión Estratégica</h3>
+                        <p>Audita reportes y documentos en segundos, no horas.</p>
                     </div>
                 </div>
                 <div class="skill-item">
-                    <i>🛡️</i>
+                    <i>🚀</i>
                     <div class="skill-text">
-                        <h3>Control Total</h3>
-                        <p>Gestión estratégica de tus documentos.</p>
+                        <h3>Resultados Senior</h3>
+                        <p>Aumenta tu impacto profesional con herramientas de vanguardia.</p>
                     </div>
                 </div>
             </div>
@@ -340,17 +324,12 @@
         <div class="footer">
             <a href="https://wa.me/56996829223?text=Hola,%20quiero%20potenciar%20mi%20carrera%20con%20IA"
                 class="btn btn-primary">
-                <span>HABLAR POR WHATSAPP</span> 🚀
+                <span>RESERVAR MI CUPO</span> 🚀
             </a>
-            <a href="https://clabza16.github.io/ConsultorIA/page/" class="btn btn-outline">MÁS INFORMACIÓN</a>
 
             <div class="contact-info">
-                <a href="mailto:clabza16@gmail.com">
-                    <span>📧 <b>clabza16@gmail.com</b></span>
-                </a>
-                <a href="tel:+56996829223">
-                    <span>📞 <b>+56 9 9682 9223</b></span>
-                </a>
+                <p>¿Dudas? Escríbenos directamente</p>
+                <a href="https://wa.me/56996829223">WhatsApp: +56 9 9682 9223</a>
             </div>
         </div>
     </div>

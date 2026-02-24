@@ -1,47 +1,43 @@
-# Plan de Escalamiento: ConsultorIA (Solo Founder Edition)
+# Plan de Lanzamiento y Escalamiento: ConsultorIA
 
-Este documento detalla la estrategia para ConsultorIA, considerando tu rol triple como **Consultor, Fundador y Desarrollador**. Al tener las 4 clases y presentaciones listas, el enfoque ahora es la validación comercial y el flujo de caja.
-
----
-
-## 🚀 Fase 0: El "Soft Launch" (Prueba de Mercado)
-*Objetivo: Validar que el sistema técnico y el contenido funcionan con usuarios reales.*
-
-1.  **Prueba de Humo (Interna)**: Usa dos correos distintos para reservar en tu web. Verifica que:
-    *   Te llegue la invitación a Google Calendar.
-    *   El nombre aparezca en el Google Sheets.
-2.  **Beta Test (3-5 invitados)**: Ofrece un "Demo Day" o precio preferencial a 3 contactos de confianza. Pídeles que usen la calculadora de ROI y te den feedback sobre si los números les hacen sentido.
-3.  **Ajuste de Presentaciones**: Con el feedback del Beta Test, ajusta los ejercicios prácticos de tus diapositivas para asegurar que sean "clic a clic".
-
-## 💰 Estimación de Ganancias (Modelo MVP)
-*Basado en el precio actual de $80.000 CLP por cupo.*
-
-| Concepto | Detalle | Total (CLP) |
-| :--- | :--- | :--- |
-| **Ingreso por Cohorte** | 10 alumnos x $80.000 | **$800.000** |
-| **Frecuencia Sugerida** | 2 cohortes al mes | **$1.600.000** |
-| **Costos Operativos** | Zoom Pro + Hosting + Google Workspace | (~$45.000) |
-| **Margen Neto Est.** | **Rentabilidad > 95%** | **$1.555.000** |
-
-*Nota: Al ser tú el desarrollador y docente, el costo de adquisición de clientes (CAC) vía LinkedIn es tu principal inversión (tiempo).*
+Como el contenido de las dos sesiones (ADN Digital y Ecosistema Avanzado) ya está listo en tus presentaciones, el enfoque se desplaza de la **creación** a la **comercialización y entrega**.
 
 ---
 
-## 🔝 Próximos Pasos Estratégicos
+## 🎯 Fase 1: El "Market Blitz" (Semana 1-2)
+*Objetivo: Llenar la primera cohorte con 10 alumnos.*
 
-### Fase 1: Autoridad y Ventas (Mes 1)
-*   **LinkedIn Blitz**: Publicar 1 video corto mostrando cómo la calculadora de ROI predice el ahorro de tiempo. Es tu mejor herramienta de venta.
-*   **Venta Directa**: Contactar a los 10 prospectos con más perfil "Senior" de tu red y ofrecerles el manual de identidad digital de la Clase 1.
+1.  **Activación de Red Directa**: No esperes a anuncios. Contacta personalmente a 20 profesionales senior de tu red.
+    *   *Pitch:* "Ya tengo listo el programa ConsultorIA. Son 2 sesiones donde te ayudo a crear tu clon digital y automatizar tus reportes. Por ser el lanzamiento, el cupo está a $60.000."
+2.  **Demo-Marketing en LinkedIn**: Publica 3 piezas de contenido:
+    *   *Video 1:* Grabación de pantalla usando la **Calculadora de ROI** (muestra el ahorro real).
+    *   *Carrusel:* "Lo que aprendí diseñando las diapositivas de ConsultorIA" (comparte un tip de la Sesión 1).
+    *   *Imagen:* Foto de tus presentaciones listas con el título "Todo listo para la primera generación".
+3.  **Landing Page Checkout**: Asegúrate de que el botón de reserva lleve a un medio de pago (Transferencia o Link de pago) para cerrar la venta de inmediato.
 
-### Fase 2: Automatización Administrativa (Mes 2)
-*   **Botón de Pago Real**: Integrar una pasarela para que la reserva solo se confirme tras el pago. Esto elimina el seguimiento manual de transferencias.
-*   **Reporte Automatizado**: Que la calculadora de ROI envíe un correo automático con el resumen del ahorro al potencial cliente.
+## ⚙️ Fase 2: Ejecución Impecable (Semana 3-4)
+*Objetivo: Entregar una experiencia de $500k cobrando $60k para generar testimonios.*
 
-### Fase 3: El Salto a "Programmable" (Mes 4+)
-*   **ConsultorIA On-Demand**: Graba las 4 sesiones. Vende el acceso a las grabaciones por $40.000 (50% desc) como un producto pasivo.
-*   **Agentes Corporativos**: Vende el servicio de crear los agentes de la Clase 4 directamente para empresas (Ticket de $500.000+ por implementación).
+1.  **Logística de Sesiones**: 
+    *   Crea un documento de "Bienvenida" simple (PDF) que envíes al reservar.
+    *   Prepara el entorno de Zoom/Google Meet con grabación activada.
+2.  **Captura de Valor**: Durante las clases, pide permiso para grabar fragmentos cortos ("píldoras") que sirvan para marketing futuro.
+3.  **Encuesta de Impacto**: Al finalizar la Sesión 2, solicita un testimonio en video o texto. Esto es más valioso que los $60.000 en esta etapa.
+
+## 📈 Fase 3: Escalamiento y Optimización (Mes 2+)
+*Objetivo: Aumentar el ticket promedio y automatizar.*
+
+1.  **Subida de Precio**: Una vez validados los testimonios, sube el precio a **$80.000 o $100.000**.
+2.  **Producto "Evergreen"**: Considera vender las grabaciones y las presentaciones como un "Self-Paced Course" a un precio menor ($35.000), sin tu presencia en vivo.
+3.  **Oferta B2B**: Empaqueta ConsultorIA para equipos de empresas. El contenido ya lo tienes; solo necesitas adaptar los ejemplos al rubro de la empresa.
 
 ---
 
-> [!IMPORTANT]
-> **Tu Ventaja Competitiva**: Eres el desarrollador. Si un cliente pide una funcionalidad de IA específica en la Clase 4, puedes prototiparla en vivo. Eso genera una percepción de valor altísima (High-Ticket).
+## 🛠️ Acciones Inmediatas (Checklist)
+- [x] Contenido de clases listo (Presentaciones).
+- [/] Ajustar Landing Page para captar leads (Eliminar precio en botón listo).
+- [ ] Crear mensaje de "WhatsApp/LinkedIn Outreach" para ventas directas.
+- [ ] Configurar recordatorios automáticos de sesión post-reserva.
+
+> [!TIP]
+> **Estrategia del Experto**: Tu contenido ya es sólido. Ahora tu trabajo no es enseñar, es **asegurar que apliquen**. En las sesiones, dedica el 40% del tiempo a que ellos operen la IA en vivo. Eso garantiza el "Efecto WOW".
