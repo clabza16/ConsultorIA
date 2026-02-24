@@ -1,7 +1,16 @@
 // URL de tu aplicación de Google Apps Script (PEGAR AQUÍ DESPUÉS DE IMPLEMENTAR)
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxLFSV72yDd1PIGgL7wCpAMxmuAKIKYP2HO8k2MqtoGTc7Vu0VyLKvLflI5TvwFFcyz/exec';
+const SHARED_SECRET_TOKEN = 'ConsultorIA_v1_Secret_2026';
+
+// Validador de email con Regex
+const isValidEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+};
 
 document.addEventListener('DOMContentLoaded', () => {
+    const bookingModal = document.getElementById('booking-modal');
+    // ... (rest of the elements)
+
     const bookingModal = document.getElementById('booking-modal');
     const closeBtn = document.querySelector('.close-modal');
     const scheduleBtns = document.querySelectorAll('a[href="#agendar"], .btn-booking');
@@ -34,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para obtener fechas desde el backend
     const fetchAvailableDates = async () => {
         try {
-            const response = await fetch(GOOGLE_SCRIPT_URL);
+            const response = await fetch(`${GOOGLE_SCRIPT_URL}?secret_token=${SHARED_SECRET_TOKEN}`);
             const result = await response.json();
             if (result.status === "success") {
                 availableDates = result.dates;
@@ -141,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         bookingStatus.innerHTML = '<p style="text-align: center; color: var(--accent);">Cargando horarios...</p>';
 
         try {
-            const response = await fetch(`${GOOGLE_SCRIPT_URL}?date=${selectedDateString}`);
+            const response = await fetch(`${GOOGLE_SCRIPT_URL}?date=${selectedDateString}&secret_token=${SHARED_SECRET_TOKEN}`);
             const result = await response.json();
             bookingStatus.innerHTML = '';
 
@@ -190,8 +199,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const name = document.getElementById('user-name').value;
         const email = document.getElementById('user-email').value;
 
-        if (!name || !email) {
-            alert('Por favor, ingresa tu nombre y correo electrónico.');
+        if (!name.trim() || !isValidEmail(email)) {
+            alert('Por favor, ingresa un nombre válido y un correo electrónico correcto.');
             return;
         }
 
@@ -205,7 +214,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     date: selectedDateString,
                     hour: selectedHour,
                     name: name,
-                    email: email
+                    email: email,
+                    secret_token: SHARED_SECRET_TOKEN
                 })
             });
 
@@ -230,8 +240,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <div style="margin-top: 1.5rem; padding: 2rem; background: #f0fdf4; border-radius: 12px; border: 1px solid #bbf7d0; text-align: center;">
                 <p style="font-size: 2rem; margin-bottom: 1rem;">✅</p>
                 <p style="font-weight: 600; color: #15803d; font-size: 1.25rem;">¡Reserva Exitosa!</p>
-                <p style="margin-top: 0.5rem; color: #166534;">${msg}</p>
+                <p id="success-msg-text" style="margin-top: 0.5rem; color: #166534;"></p>
             </div>
         `;
+        document.getElementById('success-msg-text').textContent = msg;
     }
 });

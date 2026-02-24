@@ -11,8 +11,18 @@ function getUniversalDate(dateStr, hour, timezone) {
   return new Date(iso);
 }
 
+// Token de seguridad compartido
+const SHARED_SECRET_TOKEN = "ConsultorIA_v1_Secret_2026";
+
 // 1. OBTENER FECHAS O HORAS DISPONIBLES
 function doGet(e) {
+  // Verificación de seguridad
+  if (e.parameter.secret_token !== SHARED_SECRET_TOKEN) {
+    return ContentService.createTextOutput(JSON.stringify({
+      "status": "error", "message": "No autorizado"
+    })).setMimeType(ContentService.MimeType.JSON);
+  }
+
   try {
     var calendar = CalendarApp.getDefaultCalendar();
     var timezone = calendar.getTimeZone();
@@ -104,6 +114,12 @@ function doPost(e) {
     var calendar = CalendarApp.getDefaultCalendar();
     var timezone = calendar.getTimeZone();
     var data = e.postData && e.postData.contents ? JSON.parse(e.postData.contents) : e.parameter;
+    
+    // Verificación de seguridad
+    if (data.secret_token !== SHARED_SECRET_TOKEN) {
+      throw new Error("Petición no autorizada");
+    }
+    
     
     var sStart = getUniversalDate(data.date, parseInt(data.hour), timezone);
     var sEnd = getUniversalDate(data.date, parseInt(data.hour) + 1, timezone);
