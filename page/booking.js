@@ -9,9 +9,6 @@ const isValidEmail = (email) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const bookingModal = document.getElementById('booking-modal');
-    // ... (rest of the elements)
-
-    const bookingModal = document.getElementById('booking-modal');
     const closeBtn = document.querySelector('.close-modal');
     const scheduleBtns = document.querySelectorAll('a[href="#agendar"], .btn-booking');
     const calendarDays = document.getElementById('calendar-days');
