@@ -511,10 +511,10 @@ nav {
 }
 
 .offer-label {
-    font-size: 1.25rem !important;
-    color: var(--accent) !important;
-    font-weight: 700 !important;
-    margin-top: 0.5rem;
+    font-size: 1.5rem !important;
+    color: var(--text-muted) !important;
+    font-weight: 500 !important;
+    margin-top: 0;
 }
 
 .pricing-features {
