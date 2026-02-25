@@ -915,6 +915,7 @@ footer {
     color: var(--white);
 }
 
+
 .calendar-days li.inactive {
     opacity: 0.2;
 }
@@ -922,27 +923,75 @@ footer {
 .calendar-days li.active {
     border: 2px solid var(--accent);
 }
- / *   M e r c a d o   P a g o   P a y m e n t   B u t t o n   * / 
- . b t n - m e r c a d o p a g o   { 
-         b a c k g r o u n d :   # 0 0 9 e e 3 ; 
-         c o l o r :   w h i t e   ! i m p o r t a n t ; 
-         p a d d i n g :   1 . 2 5 r e m   2 . 5 r e m ; 
-         b o r d e r - r a d i u s :   1 2 p x ; 
-         f o n t - w e i g h t :   7 0 0 ; 
-         t e x t - d e c o r a t i o n :   n o n e ; 
-         d i s p l a y :   i n l i n e - b l o c k ; 
-         t r a n s i t i o n :   a l l   0 . 3 s   c u b i c - b e z i e r ( 0 . 4 ,   0 ,   0 . 2 ,   1 ) ; 
-         b o x - s h a d o w :   0   4 p x   6 p x   - 1 p x   r g b a ( 0 ,   1 5 8 ,   2 2 7 ,   0 . 4 ) ; 
-         m a r g i n - t o p :   1 r e m ; 
-         b o r d e r :   n o n e ; 
-         c u r s o r :   p o i n t e r ; 
-         f o n t - f a m i l y :   ' O u t f i t ' ,   s a n s - s e r i f ; 
- } 
- 
- . b t n - m e r c a d o p a g o : h o v e r   { 
-         b a c k g r o u n d :   # 0 0 8 7 c 1 ; 
-         t r a n s f o r m :   t r a n s l a t e Y ( - 3 p x ) ; 
-         b o x - s h a d o w :   0   2 0 p x   2 5 p x   - 5 p x   r g b a ( 0 ,   1 5 8 ,   2 2 7 ,   0 . 5 ) ; 
- } 
-  
- 
+
+/* Mercado Pago Payment Button */
+.btn-mercadopago {
+    background: #009ee3;
+    color: white !important;
+    padding: 1.25rem 2.5rem;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 158, 227, 0.4);
+    margin-top: 1rem;
+    border: none;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+}
+
+.btn-mercadopago:hover {
+    background: #0087c1;
+    transform: translateY(-3px);
+    box-shadow: 0 20px 25px -5px rgba(0, 158, 227, 0.5);
+}
+
+/* Header Contact Buttons */
+.header-contact {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.contact-mini-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: var(--white);
+    color: var(--primary);
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(15, 23, 42, 0.05);
+    text-decoration: none;
+}
+
+.contact-mini-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(15, 23, 42, 0.1);
+}
+
+.contact-mini-btn.whatsapp:hover {
+    color: #25D366;
+    background: #f0fdf4;
+    border-color: rgba(37, 211, 102, 0.2);
+}
+
+.contact-mini-btn.email:hover {
+    color: var(--accent);
+    background: #eff6ff;
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+@media (max-width: 480px) {
+    .header-contact {
+        gap: 0.35rem;
+    }
+
+    .contact-mini-btn {
+        width: 32px;
+        height: 32px;
+    }
+}
