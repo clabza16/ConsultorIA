@@ -183,7 +183,7 @@ function setup() {
   console.log("Activando permisos...");
   DriveApp.getRootFolder();
   CalendarApp.getDefaultCalendar().getName();
-  GmailApp.getRemainingDailyQuota(); // Fuerza permiso de Gmail
+  GmailApp.getAliases(); // Fuerza permiso de Gmail de forma segura
   console.log("¡Permisos listos!");
 }
 
