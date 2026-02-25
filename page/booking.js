@@ -71,7 +71,17 @@ document.addEventListener('DOMContentLoaded', () => {
         bookingStatus.innerHTML = '';
         document.getElementById('user-name').value = '';
         document.getElementById('user-email').value = '';
+        const paymentCheckbox = document.getElementById('payment-confirmed');
+        if (paymentCheckbox) {
+            paymentCheckbox.checked = false;
+        }
+        finalConfirmBtn.disabled = true;
     }
+
+    // Listener para habilitar botón de reserva solo si se confirma el pago
+    document.getElementById('payment-confirmed').addEventListener('change', (e) => {
+        finalConfirmBtn.disabled = !e.target.checked;
+    });
 
     // Close Modal
     closeBtn.addEventListener('click', () => {
@@ -195,9 +205,15 @@ document.addEventListener('DOMContentLoaded', () => {
     finalConfirmBtn.addEventListener('click', async () => {
         const name = document.getElementById('user-name').value;
         const email = document.getElementById('user-email').value;
+        const isPaid = document.getElementById('payment-confirmed').checked;
 
         if (!name.trim() || !isValidEmail(email)) {
             alert('Por favor, ingresa un nombre válido y un correo electrónico correcto.');
+            return;
+        }
+
+        if (!isPaid) {
+            alert('Por favor, confirma que has realizado el pago para continuar.');
             return;
         }
 
@@ -238,6 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p style="font-size: 2rem; margin-bottom: 1rem;">✅</p>
                 <p style="font-weight: 600; color: #15803d; font-size: 1.25rem;">¡Reserva Exitosa!</p>
                 <p id="success-msg-text" style="margin-top: 0.5rem; color: #166534;"></p>
+                <p style="font-size: 0.9rem; color: #166534; margin-top: 1rem; opacity: 0.8;">La confirmación ha sido enviada a tu correo.</p>
             </div>
         `;
         document.getElementById('success-msg-text').textContent = msg;

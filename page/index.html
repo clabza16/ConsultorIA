@@ -268,11 +268,31 @@
                         <input type="email" id="user-email" placeholder="ejemplo@correo.com"
                             style="padding: 0.75rem; font-size: 1rem; width: 100%; border: 1px solid #cbd5e1; border-radius: 8px;">
                     </div>
+
                     <div id="selected-date-display"
                         style="margin-bottom: 1.5rem; padding: 1rem; background: #f0f9ff; border-radius: 8px; border: 1px dotted #3b82f6;">
                         <!-- JS will populate this -->
                     </div>
-                    <button id="final-confirm-btn" class="btn btn-primary" style="width: 100%;">Confirmar
+
+                    <div
+                        style="margin: 1.5rem 0; padding: 1.5rem; background: #f0f9ff; border-radius: 12px; border: 1px solid #3b82f6; text-align: center;">
+                        <p style="font-weight: 600; color: #0369a1; margin-bottom: 1rem;">Para reservar, realiza el pago
+                            aquí:</p>
+                        <a href="https://mpago.la/2aSkiDD" target="_blank" class="btn-mercadopago"
+                            id="payment-trigger">Pagar con Mercado Pago</a>
+                        <p style="font-size: 0.8rem; color: #0369a1; margin-top: 0.5rem;">Costo: $60.000 CLP</p>
+                    </div>
+
+                    <div class="checkbox-group"
+                        style="margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 0.75rem;">
+                        <input type="checkbox" id="payment-confirmed"
+                            style="margin-top: 0.25rem; transform: scale(1.2);">
+                        <label for="payment-confirmed"
+                            style="font-size: 0.9rem; color: var(--text); cursor: pointer;">Confirmo que he realizado el
+                            pago de la sesión a través de Mercado Pago.</label>
+                    </div>
+
+                    <button id="final-confirm-btn" class="btn btn-primary" style="width: 100%;" disabled>Confirmar
                         Reserva</button>
                     <button id="back-to-calendar"
                         style="width: 100%; background: none; border: none; color: var(--text-muted); margin-top: 1rem; cursor: pointer;">&larr;
