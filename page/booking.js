@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         bookingStatus.innerHTML = '';
         document.getElementById('user-name').value = '';
         document.getElementById('user-email').value = '';
+        document.getElementById('user-phone').value = '';
         const paymentCheckbox = document.getElementById('payment-confirmed');
         if (paymentCheckbox) {
             paymentCheckbox.checked = false;
@@ -205,10 +206,11 @@ document.addEventListener('DOMContentLoaded', () => {
     finalConfirmBtn.addEventListener('click', async () => {
         const name = document.getElementById('user-name').value;
         const email = document.getElementById('user-email').value;
+        const phone = document.getElementById('user-phone').value;
         const isPaid = document.getElementById('payment-confirmed').checked;
 
-        if (!name.trim() || !isValidEmail(email)) {
-            alert('Por favor, ingresa un nombre válido y un correo electrónico correcto.');
+        if (!name.trim() || !isValidEmail(email) || !phone.trim()) {
+            alert('Por favor, ingresa tu nombre, un email válido y un teléfono de contacto.');
             return;
         }
 
@@ -228,6 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     hour: selectedHour,
                     name: name,
                     email: email,
+                    phone: phone,
                     secret_token: SHARED_SECRET_TOKEN
                 })
             });

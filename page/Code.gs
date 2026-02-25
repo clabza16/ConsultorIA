@@ -135,7 +135,23 @@ function doPost(e) {
       sendInvites: true
     });
     
-    logToSheet(data.date, data.name, data.email, data.hour);
+    logToSheet(data.date, data.name, data.email, data.phone, data.hour);
+    
+    // ENVIAR NOTIFICACIÓN AL ADMINISTRADOR
+    try {
+      var adminEmail = "clabza16@gmail.com";
+      var subject = "NUEVA RESERVA: " + data.name + " (" + data.date + ")";
+      var body = "Se ha registrado una nueva reserva en ConsultorIA:\n\n" +
+                 "Nombre: " + data.name + "\n" +
+                 "Email: " + data.email + "\n" +
+                 "Teléfono: " + (data.phone || "No proporcionado") + "\n" +
+                 "Fecha: " + data.date + "\n" +
+                 "Hora: " + data.hour + ":00\n\n" +
+                 "Revisa el Excel de Reservas para más detalles.";
+      MailApp.sendEmail(adminEmail, subject, body);
+    } catch (e) {
+      console.error("Error enviando email: " + e.toString());
+    }
     
     return ContentService.createTextOutput(JSON.stringify({
       "status": "success", "message": "Confirmado"
@@ -150,15 +166,15 @@ function doPost(e) {
   }
 }
 
-function logToSheet(date, name, email, hour) {
+function logToSheet(date, name, email, phone, hour) {
   var ss;
   var files = DriveApp.getFilesByName("ConsultorIA_Reservas");
   if (files.hasNext()) ss = SpreadsheetApp.open(files.next());
   else ss = SpreadsheetApp.create("ConsultorIA_Reservas");
   
   var sheet = ss.getSheetByName("Reservas") || ss.insertSheet("Reservas");
-  if (sheet.getLastRow() == 0) sheet.appendRow(["Fecha", "Nombre", "Email", "Horario", "Timestamp"]);
-  sheet.appendRow([date, name, email, hour + ":00", new Date()]);
+  if (sheet.getLastRow() == 0) sheet.appendRow(["Fecha", "Nombre", "Email", "Telefono", "Horario", "Timestamp"]);
+  sheet.appendRow([date, name, email, phone, hour + ":00", new Date()]);
 }
 
 // FUNCIÓN DE CONFIGURACIÓN INICIAL (Ejecuta esto para dar permisos)
