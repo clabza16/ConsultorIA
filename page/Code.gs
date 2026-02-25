@@ -13,6 +13,7 @@ function getUniversalDate(dateStr, hour, timezone) {
 
 // Token de seguridad compartido
 const SHARED_SECRET_TOKEN = "ConsultorIA_v1_Secret_2026";
+const ADMIN_EMAIL = "clabza16@gmail.com";
 
 // 1. OBTENER FECHAS O HORAS DISPONIBLES
 function doGet(e) {
@@ -139,7 +140,6 @@ function doPost(e) {
     
     // ENVIAR NOTIFICACIÓN AL ADMINISTRADOR
     try {
-      var adminEmail = "clabza16@gmail.com";
       var subject = "NUEVA RESERVA: " + data.name + " (" + data.date + ")";
       var body = "Se ha registrado una nueva reserva en ConsultorIA:\n\n" +
                  "Nombre: " + data.name + "\n" +
@@ -148,9 +148,10 @@ function doPost(e) {
                  "Fecha: " + data.date + "\n" +
                  "Hora: " + data.hour + ":00\n\n" +
                  "Revisa el Excel de Reservas para más detalles.";
-      MailApp.sendEmail(adminEmail, subject, body);
+      GmailApp.sendEmail(ADMIN_EMAIL, subject, body);
     } catch (e) {
       console.error("Error enviando email: " + e.toString());
+      logToSheet(data.date, "ERROR EMAIL", data.email, e.toString(), data.hour);
     }
     
     return ContentService.createTextOutput(JSON.stringify({
@@ -182,5 +183,16 @@ function setup() {
   console.log("Activando permisos...");
   DriveApp.getRootFolder();
   CalendarApp.getDefaultCalendar().getName();
+  GmailApp.getRemainingDailyQuota(); // Fuerza permiso de Gmail
   console.log("¡Permisos listos!");
+}
+
+// FUNCIÓN PARA PROBAR EL ENVÍO DE CORREO
+function testEmail() {
+  try {
+    GmailApp.sendEmail(ADMIN_EMAIL, "Prueba de Notificación ConsultorIA", "Si recibes esto, el sistema de correos está funcionando correctamente.");
+    console.log("Correo de prueba enviado a " + ADMIN_EMAIL);
+  } catch (e) {
+    console.error("Fallo el envío: " + e.toString());
+  }
 }
