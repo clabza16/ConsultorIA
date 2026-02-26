@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             resetModal();
             bookingModal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+            document.body.classList.add('modal-open');
             renderCalendar();
         });
     });
@@ -87,13 +87,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close Modal
     closeBtn.addEventListener('click', () => {
         bookingModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
+        document.body.classList.remove('modal-open');
     });
 
     window.onclick = (event) => {
         if (event.target == bookingModal) {
             bookingModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
+            document.body.classList.remove('modal-open');
         }
     }
 
