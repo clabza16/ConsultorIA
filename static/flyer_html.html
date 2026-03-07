@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConsultorIA - Recupera tu Tiempo</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #3b82f6;
+            --background: #f8fafc;
+            --text: #1e293b;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .flyer {
+            background: var(--white);
+            width: 100%;
+            max-width: 480px;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #e2e8f0;
+        }
+
+        .header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 50px 35px;
+            text-align: center;
+        }
+
+        .brand {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .brand span {
+            color: var(--accent);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            line-height: 1.1;
+            font-weight: 900;
+            letter-spacing: -0.04em;
+        }
+
+        .content {
+            padding: 45px 35px;
+        }
+
+        .benefit-tag {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .results-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .result-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .icon {
+            font-size: 1.4rem;
+            margin-right: 15px;
+            margin-top: 2px;
+        }
+
+        .result-text b {
+            display: block;
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .result-text p {
+            font-size: 1rem;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
+        .cta-box {
+            background: #f1f5f9;
+            padding: 30px;
+            border-radius: 24px;
+            text-align: center;
+        }
+
+        .btn {
+            background: #25D366;
+            /* WhatsApp Green */
+            color: var(--white);
+            text-decoration: none;
+            padding: 20px 30px;
+            border-radius: 18px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            display: block;
+            transition: transform 0.3s;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            margin-bottom: 15px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .price-tag {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="flyer">
+        <div class="header">
+            <div class="brand">Consultor<span>IA</span></div>
+            <h1>Metodología de Trabajo<br>Potenciada con IA</h1>
+        </div>
+
+        <div class="content">
+            <div class="benefit-tag">ALTO RENDIMIENTO Y CALIDAD</div>
+
+            <h2>Acelera tus proyectos hoy</h2>
+
+            <div class="results-list">
+                <div class="result-item">
+                    <span class="icon">🚀</span>
+                    <div class="result-text">
+                        <b>Velocidad Estratégica</b>
+                        <p>Acelera tus proyectos drásticamente integrando IA en cada etapa de tu flujo de trabajo.</p>
+                    </div>
+                </div>
+
+                <div class="result-item">
+                    <span class="icon">✨</span>
+                    <div class="result-text">
+                        <b>Calidad Superior</b>
+                        <p>Aumenta la calidad de cada entregable con optimización y refinamiento asistido por IA.</p>
+                    </div>
+                </div>
+
+                <div class="result-item">
+                    <span class="icon">📈</span>
+                    <div class="result-text">
+                        <b>Resultados Garantizados</b>
+                        <p>Metodología probada para maximizar tu impacto y recuperar horas de tu día.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-box">
+                <a href="https://wa.me/56996829223" class="btn">¡Quiero empezar ya!</a>
+                <span class="price-tag">WhatsApp: +56 9 9682 9223<br>Email: clabza16@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

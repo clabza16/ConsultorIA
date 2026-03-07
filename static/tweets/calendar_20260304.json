@@ -1,0 +1,58 @@
+[
+  {
+    "dia": "Lunes",
+    "hora": "8:30 AM",
+    "tipo": "Educativo",
+    "emoji": "💡",
+    "tweet_preview": "Escribirle a la IA no es magia.\nEs saber dar órdenes claras...",
+    "razon": "Lunes en la mañana es ideal para posicionarse como autoridad educativa cuando la gente empieza su semana laboral."
+  },
+  {
+    "dia": "Martes",
+    "hora": "1:00 PM",
+    "tipo": "Viral/Opinión",
+    "emoji": "🔥",
+    "tweet_preview": "La IA no te va a quitar la pega.\nTe la va a quitar el que...",
+    "razon": "Horario de almuerzo donde el scroll es más rápido; un mensaje provocativo genera interacción y 'likes' de validación."
+  },
+  {
+    "dia": "Miércoles",
+    "hora": "7:30 PM",
+    "tipo": "Storytelling",
+    "emoji": "📈",
+    "tweet_preview": "Un contador amigo estaba chato.\n4 horas diarias solo redactando informes...",
+    "razon": "A mitad de semana, la gente está cansada. Una historia de éxito personal conecta con el dolor del agotamiento laboral."
+  },
+  {
+    "dia": "Jueves",
+    "hora": "8:45 AM",
+    "tipo": "Tip",
+    "emoji": "🛠️",
+    "tweet_preview": "¿Recibiste un PDF de 40 páginas?\nNo perdái el tiempo leyéndolo entero...",
+    "razon": "Contenido práctico de 'ahorro de tiempo' para aplicar inmediatamente en la oficina un jueves de alta carga."
+  },
+  {
+    "dia": "Viernes",
+    "hora": "12:30 PM",
+    "tipo": "Viral/Irreverente",
+    "emoji": "😎",
+    "tweet_preview": "Trabajar más no es trabajar mejor.\nEs ser porfiado...",
+    "razon": "Viernes antes de salir. El tono irreverente resuena con el deseo de terminar rápido la jornada usando IA."
+  },
+  {
+    "dia": "Sábado",
+    "hora": "10:30 AM",
+    "tipo": "Educativo (Herramientas)",
+    "emoji": "🔍",
+    "tweet_preview": "ChatGPT no es lo único que existe.\nSi eres abogado o profe, prueba esto...",
+    "razon": "El sábado por la mañana los profesionales están más abiertos a 'curiosear' herramientas nuevas con calma."
+  },
+  {
+    "dia": "Domingo",
+    "hora": "8:00 PM",
+    "tipo": "CTA Directo (Invitación)",
+    "emoji": "🚀",
+    "tweet_preview": "Mañana parte otra semana de correos infinitos.\n¿O prefieres aprender a automatizar?...",
+    "razon": "El 'domingo de bajón' es el mejor momento para ofrecer una solución al estrés del lunes: clases personalizadas."
+  }
+]

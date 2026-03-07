@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConsultorIA - Clase 1: ADN Digital</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #3b82f6;
+            --background: #f8fafc;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --code-bg: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            overflow: hidden;
+        }
+
+        .slide {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 5rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            background-color: var(--background);
+        }
+
+        .slide.active {
+            opacity: 1;
+            z-index: 10;
+        }
+
+        .slide.dark {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .slide.dark h1,
+        .slide.dark h2,
+        .slide.dark h3 {
+            color: var(--white);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            border-bottom: 4px solid var(--accent);
+            padding-bottom: 0.5rem;
+            width: 100%;
+            text-align: left;
+        }
+
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            width: 100%;
+            text-align: left;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 1100px;
+            font-size: 1.8rem;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        li {
+            margin-bottom: 1rem;
+            padding-left: 2.5rem;
+            position: relative;
+        }
+
+        li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .prompt-box {
+            background: var(--code-bg);
+            color: #93c5fd;
+            padding: 2rem;
+            border-radius: 16px;
+            font-family: 'Inter', monospace;
+            font-size: 1.4rem;
+            width: 100%;
+            border-left: 8px solid var(--accent);
+            margin: 1.5rem 0;
+            white-space: pre-wrap;
+            box-shadow: var(--shadow);
+        }
+
+        .rationale {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .rationale::before {
+            content: "🚀 Acción y Beneficio:";
+            padding: 0.2rem 0.5rem;
+            background: var(--accent);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .analog-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            border: 2px solid rgba(59, 130, 246, 0.1);
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            font-size: 1.2rem;
+        }
+
+        th,
+        td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background: #f1f5f9;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: var(--shadow);
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .progress {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 6px;
+            background: var(--accent);
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.3s ease;
+        }
+
+        .step-label {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--accent);
+            color: var(--white);
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .brand {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .brand span {
+            color: var(--accent);
+        }
+
+        .slide.dark .brand {
+            color: var(--white);
+        }
+
+        .slide.dark .brand span {
+            color: var(--accent);
+        }
+
+        .fixed-logo {
+            position: fixed;
+            top: 2rem;
+            right: 3rem;
+            z-index: 1000;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none;
+        }
+
+        .fixed-logo span {
+            color: var(--accent);
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            max-width: 1200px;
+            text-align: left;
+        }
+
+        .profile-text {
+            flex: 1;
+        }
+
+        .profile-text p {
+            font-size: 1.8rem;
+            line-height: 1.6;
+            margin-top: 1rem;
+        }
+
+        .profile-image img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid var(--accent);
+            box-shadow: var(--shadow);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress" id="progress"></div>
+    <div class="fixed-logo" id="fixed-logo">Consultor<span>IA</span></div>
+
+    <div class="slide dark active">
+        <div class="brand">Consultor<span>IA</span></div>
+        <h1>ADN Digital y<br>Cimientos de Productividad</h1>
+        <p style="font-size: 1.8rem; opacity: 0.8; font-weight: 500;">Sesión 1: Domina tu Nuevo Equipo</p>
+    </div>
+
+    <!-- Slide 2: Sobre Mí -->
+    <div class="slide">
+        <div class="profile-container">
+            <div class="profile-text">
+                <h2>Sobre Mí</h2>
+                <p>Soy un profesional apasionado por la creatividad y la innovación. Como Ingeniero Civil Industrial, mi
+                    misión es transformar la complejidad de la IA en una herramienta estratégica que potencie tu
+                    experiencia y te devuelva tu recurso más valioso: el tiempo.</p>
+            </div>
+            <div class="profile-image">
+                <img src="yo.png" alt="Perfil">
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: Analogía -->
+    <div class="slide">
+        <h2>Tu "Practicante Estrella"</h2>
+        <div class="analog-card">
+            <p style="font-size: 2.2rem; line-height: 1.4; color: var(--primary);">
+                Imagina que acabas de contratar a un <b>Analista Senior</b> brillante,<br>pero que no sabe nada de ti ni
+                de tu empresa.
+            </p>
+            <p style="font-size: 1.5rem; margin-top: 2rem; color: var(--text-muted);">
+                <b>La Clave:</b> No le pidas que "haga la tarea", pídele que "actúe como el experto que la haría".
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 3: Configuración Rápida -->
+    <div class="slide">
+        <span class="step-label">PASO 0</span>
+        <h2>Terreno Listo</h2>
+        <div class="content">
+            <div class="rationale">Estamos preparando un entorno de trabajo limpio y profesional para asegurar que la IA
+                trabaje sin distracciones de historial previo y optimice su rendimiento.</div>
+            <ul>
+                <li><b>Navegador</b>: Google Chrome (Recomendado).</li>
+                <li><b>Inicia Sesión</b>: Ve a <u>gemini.google.com</u> con tu Gmail.</li>
+                <li><b>Chat Nuevo</b>: Siempre abre un chat nuevo para temas distintos.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 4: Taller ADN Step 1 -->
+    <div class="slide">
+        <span class="step-label">TALLER EN VIVO</span>
+        <h2>1. Instala tu ADN Digital</h2>
+        <div class="rationale">Estamos transfiriendo tu enfoque y experiencia a la IA para que deje de darte respuestas
+            genéricas y empiece a actuar como tu duplicado estratégico con tu propia voz.</div>
+        <h3>Copia y pega este prompt inicial:</h3>
+        <div class="prompt-box">"Actúa como un experto en estrategia y comunicación. Tu misión es hacerme una entrevista
+            breve para conocerme profesionalmente. Hazme 5 preguntas, una por una, sobre mi cargo, mi industria, mis
+            desafíos diarios y mi estilo de resultados. Al terminar, crea mi Manual de Identidad Profesional."</div>
+    </div>
+
+    <!-- Slide 5: El Método RTCE -->
+    <div class="slide">
+        <h2>El Método R.T.C.E.</h2>
+        <div class="rationale">Estamos aplicando una estructura de comunicación profesional para eliminar la ambigüedad
+            y obtener resultados perfectos en el primer intento, ahorrándote horas de correcciones.</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Parte</th>
+                    <th>Qué significa</th>
+                    <th>Ejemplo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Rol</b></td>
+                    <td>¿Quién es la IA?</td>
+                    <td>"Asistente Ejecutivo Senior..."</td>
+                </tr>
+                <tr>
+                    <td><b>Tarea</b></td>
+                    <td>¿Qué hace?</td>
+                    <td>"...redacta correo para cliente..."</td>
+                </tr>
+                <tr>
+                    <td><b>Contexto</b></td>
+                    <td>¿Qué está pasando?</td>
+                    <td>"...el cliente reclama por retraso..."</td>
+                </tr>
+                <tr>
+                    <td><b>Entrega</b></td>
+                    <td>¿Cómo es el texto?</td>
+                    <td>"...tono empático, máx. 100 palabras."</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Slide 6: Análisis de PDF -->
+    <div class="slide">
+        <span class="step-label">EJERCICIO</span>
+        <h2>3. Tu Super-Lector</h2>
+        <div class="rationale">Estamos delegando la lectura y análisis de documentos complejos para procesar grandes
+            volúmenes de información sin agotamiento mental, detectando solo lo crítico para tu cargo.</div>
+        <div class="content">
+            <p>Sube un PDF complejo y usa este prompt:</p>
+            <div class="prompt-box">"Analiza este documento basándote en mi Manual de Identidad. Dime los 3 puntos que
+                más me afectan a mí y qué acciones debería tomar mañana a primera hora."</div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Visión Artificial -->
+    <div class="slide">
+        <span class="step-label">EJERCICIO</span>
+        <h2>4. Digitaliza tus Notas</h2>
+        <div class="rationale">Estamos digitalizando información del mundo físico para convertir apuntes o pizarras de
+            reuniones en planes de acción digitales e inmediatos.</div>
+        <div class="content">
+            <p>Sube una foto de una pizarra o apunte y usa:</p>
+            <div class="prompt-box">"Limpia el texto de esta imagen y conviértelo en una minuta de reunión estructurada.
+                Identifica si hay tareas asignadas para alguien."</div>
+        </div>
+    </div>
+
+    <div class="slide dark">
+        <div class="brand">Consultor<span>IA</span></div>
+        <h2>Con qué nos vamos</h2>
+        <div class="content" style="font-size: 1.6rem;">
+            <ul>
+                <li><b>Adiós al anonimato</b>: Dejaste de ser un usuario genérico. Ahora la IA conoce tu cargo,
+                    industria y desafíos específicos.</li>
+                <li><b>El Método R.T.C.E.</b>: Ya sabes que para obtener una respuesta brillante necesitas definir Rol,
+                    Tarea, Contexto y Entrega.</li>
+                <li><b>Instrucciones Personalizadas</b>: Configuramos el "cerebro" de la IA para que siempre te responda
+                    con tu tono ejecutivo y modismos profesionales.</li>
+                <li><b>Tu Copiloto Activado</b>: Ya no necesitas presentarte en cada chat; la IA sabe que prefieres
+                    soluciones accionables.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 9: Siguiente Sesión -->
+    <div class="slide">
+        <div class="brand">Consultor<span>IA</span></div>
+        <p class="subtitle">Próxima Parada</p>
+        <h2>Ecosistema Avanzado</h2>
+        <div class="content" style="text-align: center;">
+            <p style="font-size: 1.8rem; margin-bottom: 2rem;">¿Listo para multiplicar tus resultados?</p>
+            <ul style="display: inline-block; text-align: left; font-size: 1.4rem;">
+                <li>Conocerás las <b>herramientas más potentes</b> inmersas en la IA.</li>
+                <li>Crearás tus propios <b>Asistentes Personales (Gems)</b> especializados.</li>
+                <li>Conectarás tu oficina (Gmail/Drive) al <b>motor de la IA</b>.</li>
+            </ul>
+        </div>
+        <p class="tagline">NOS VEMOS EN LA CLASE 2</p>
+    </div>
+
+    <div class="controls">
+        <button class="btn" onclick="prevSlide()">←</button>
+        <button class="btn" onclick="nextSlide()">→</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progress');
+        const fixedLogo = document.getElementById('fixed-logo');
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide) slide.classList.add('active');
+            });
+            const progress = ((currentSlide) / (slides.length - 1)) * 100;
+            progressBar.style.width = `${progress}%`;
+
+            if (currentSlide > 0) {
+                fixedLogo.style.opacity = "1";
+            } else {
+                fixedLogo.style.opacity = "0";
+            }
+        }
+
+        function nextSlide() { if (currentSlide < slides.length - 1) { currentSlide++; updateSlide(); } }
+        function prevSlide() { if (currentSlide > 0) { currentSlide--; updateSlide(); } }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+
+</html>

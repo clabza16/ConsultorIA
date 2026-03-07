@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConsultorIA - Clase 3: El Futuro es Hoy</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #3b82f6;
+            --background: #f8fafc;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --code-bg: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            overflow: hidden;
+        }
+
+        .slide {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 5rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            background-color: var(--background);
+        }
+
+        .slide.active {
+            opacity: 1;
+            z-index: 10;
+        }
+
+        .slide.dark {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .slide.dark h1,
+        .slide.dark h2,
+        .slide.dark h3 {
+            color: var(--white);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            border-bottom: 4px solid var(--accent);
+            padding-bottom: 0.5rem;
+            width: 100%;
+            text-align: left;
+        }
+
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            width: 100%;
+            text-align: left;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 1100px;
+            font-size: 1.8rem;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        li {
+            margin-bottom: 1rem;
+            padding-left: 2.5rem;
+            position: relative;
+        }
+
+        li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .prompt-box {
+            background: var(--code-bg);
+            color: #93c5fd;
+            padding: 2rem;
+            border-radius: 16px;
+            font-family: 'Inter', monospace;
+            font-size: 1.4rem;
+            width: 100%;
+            border-left: 8px solid var(--accent);
+            margin: 1.5rem 0;
+            white-space: pre-wrap;
+            box-shadow: var(--shadow);
+        }
+
+        .rationale {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .rationale::before {
+            content: "🚀 Punto Clave:";
+            padding: 0.2rem 0.5rem;
+            background: var(--accent);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .analog-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            border: 2px solid rgba(59, 130, 246, 0.1);
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            font-size: 1.2rem;
+        }
+
+        th,
+        td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background: #f1f5f9;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: var(--shadow);
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .progress {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 6px;
+            background: var(--accent);
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.3s ease;
+        }
+
+        .step-label {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--accent);
+            color: var(--white);
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .brand {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .brand span {
+            color: var(--accent);
+        }
+
+        .slide.dark .brand {
+            color: var(--white);
+        }
+
+        .slide.dark .brand span {
+            color: var(--accent);
+        }
+
+        .fixed-logo {
+            position: fixed;
+            top: 2rem;
+            right: 3rem;
+            z-index: 1000;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none;
+        }
+
+        .fixed-logo span {
+            color: var(--accent);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress" id="progress"></div>
+    <div class="fixed-logo" id="fixed-logo">Consultor<span>IA</span></div>
+
+    <!-- Slide 1: Portada -->
+    <div class="slide dark active">
+        <div class="brand">Consultor<span>IA</span></div>
+        <h1>El Futuro es Hoy -<br>Escalando sin Filtros</h1>
+        <p style="font-size: 1.8rem; opacity: 0.8; font-weight: 500;">Sesión 3: Domina las Herramientas de Nueva
+            Generación</p>
+    </div>
+
+    <!-- Slide 2: El Mindset -->
+    <div class="slide">
+        <h2>Sin Límites</h2>
+        <div class="analog-card">
+            <p style="font-size: 2.5rem; line-height: 1.4; color: var(--primary);">
+                "Hoy en día ya no hay límite para el desarrollo de tus negocios e ideas."
+            </p>
+            <p style="font-size: 1.5rem; margin-top: 2rem; color: var(--text-muted);">
+                La tecnología ya no es una barrera, es tu <b>plataforma de lanzamiento</b>.
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 3: Google AI Studio (API Keys) -->
+    <div class="slide">
+        <span class="step-label">PASO 1: INTEGRACIÓN</span>
+        <h2>1. Tu Llave: API Keys</h2>
+        <div class="content">
+            <div class="rationale">Estamos obteniendo la "llave digital" para conectar el cerebro de Gemini con tus
+                propias aplicaciones y bots de forma autónoma.</div>
+            <ul>
+                <li><b>Google AI Studio</b>: El panel de control técnico de Gemini.</li>
+                <li><b>API Key</b>: Permite que Gemini viva en Telegram, Excel o tus programas.</li>
+                <li><b>Uso Maestro</b>: Ve a <u>aistudio.google.com</u> y genera tu llave.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 4: NotebookLM -->
+    <div class="slide">
+        <span class="step-label">PASO 2: INVESTIGACIÓN</span>
+        <h2>2. Tu Socio Estratégico</h2>
+        <div class="content">
+            <div class="rationale">Estamos configurando un entorno de investigación cerrado donde la IA solo sabe (y
+                responde) basándose en tus propios archivos.</div>
+            <ul>
+                <li><b>NotebookLM</b>: Un cuaderno inteligente que solo conoce tus fuentes.</li>
+                <li><b>Audio Overview</b>: Resúmenes en formato podcast con un solo clic.</li>
+                <li><b>Foco Total</b>: Elimina las alucinaciones de internet.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 5: Antigravity -->
+    <div class="slide">
+        <span class="step-label">PASO 3: ACCIÓN</span>
+        <h2>3. De Chat a Espacio de Trabajo</h2>
+        <div class="content">
+            <div class="rationale">Estamos delegando no solo la respuesta, sino la ejecución directa sobre tus archivos
+                y la creación de prototipos funcionales.</div>
+            <ul>
+                <li><b>Acción Real</b>: Crea archivos, ejecuta comandos y construye prototipos.</li>
+                <li><b>Socio Técnico</b>: Pídele que estructure tu próximo proyecto hoy mismo.</li>
+                <li><b>Pair Programming</b>: Trabaja hombro a hombro con una IA que "ve" tu código.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 6: Agentes Avanzados (Plataformas) -->
+    <div class="slide">
+        <h2>4. Plataformas Líderes</h2>
+        <div class="content" style="font-size: 1.6rem;">
+            <div class="rationale">Estamos identificando el mejor ecosistema para desplegar agentes autónomos según la
+                necesidad (Empresarial, No-Code o Equipos).</div>
+            <ul>
+                <li><b>Relevance AI</b>: Agentes que buscan datos, completan Excels y envían correos.</li>
+                <li><b>Flowise</b>: Crea flujos complejos conectando bloques de forma visual (No-Code).</li>
+                <li><b>CrewAI</b>: Coordina equipos de múltiples agentes que colaboran entre sí.</li>
+                <li><b>Vertex AI Builder</b>: La potencia de Google Cloud para agentes empresariales.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 7: Taller Agentes (Step-by-Step) -->
+    <div class="slide">
+        <span class="step-label">TALLER: CREA TU AGENTE</span>
+        <h2>Diseña tu Operación</h2>
+        <div class="content">
+            <div class="rationale">Estamos aplicando un framework de diseño de agentes para asegurar que cada acción
+                tenga un propósito claro y las herramientas adecuadas.</div>
+            <ol style="font-size: 1.8rem; line-height: 2;">
+                <li><b>Define el Objetivo</b>: ¿Qué debe lograr? (Ej: "Haz mi CRM").</li>
+                <li><b>Elige las Herramientas</b>: ¿A qué debe acceder? (Web, Sheets, Gmail).</li>
+                <li><b>Escribe el Persona</b>: Dale contexto y experiencia profesional.</li>
+                <li><b>Conecta y Prueba</b>: Lánzalo y observa la ejecución paso a paso.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Slide 8: Resumen / Mindset Final -->
+    <div class="slide dark">
+        <div class="brand">Consultor<span>IA</span></div>
+        <h2>Tu Nueva Realidad</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Herramienta</th>
+                    <th>Cuándo usarla</th>
+                    <th>Tu Mindset</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>AI Studio</b></td>
+                    <td>API Keys y conexión externa.</td>
+                    <td>"Mi IA vive en todas partes".</td>
+                </tr>
+                <tr>
+                    <td><b>NotebookLM</b></td>
+                    <td>Investigación profunda de fuentes.</td>
+                    <td>"Mis ideas se basan en datos".</td>
+                </tr>
+                <tr>
+                    <td><b>Antigravity</b></td>
+                    <td>Creación y ejecución de archivos.</td>
+                    <td>"Tengo un equipo instantáneo".</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Slide 9: Cierre -->
+    <div class="slide">
+        <div class="brand">Consultor<span>IA</span></div>
+        <p class="subtitle">Mensaje de Despedida</p>
+        <h2>El Límite es tu Curiosidad</h2>
+        <div class="content" style="text-align: center;">
+            <p style="font-size: 2.2rem; margin-bottom: 2rem;">Atrévete a automatizar lo "imposible".</p>
+            <p style="font-size: 1.5rem; color: var(--text-muted); line-height: 1.6;">
+                La tecnología ya hizo su parte del trabajo.<br>
+                <b>Ahora es tu turno de lanzar esa idea al mundo.</b>
+            </p>
+        </div>
+        <p class="tagline" style="margin-top: 4rem; font-weight: 800; color: var(--accent);">EL FUTURO ES HOY</p>
+    </div>
+
+    <div class="controls">
+        <button class="btn" onclick="prevSlide()">←</button>
+        <button class="btn" onclick="nextSlide()">→</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progress');
+        const fixedLogo = document.getElementById('fixed-logo');
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide) slide.classList.add('active');
+            });
+            const progress = ((currentSlide) / (slides.length - 1)) * 100;
+            progressBar.style.width = `${progress}%`;
+
+            if (currentSlide > 0) {
+                fixedLogo.style.opacity = "1";
+            } else {
+                fixedLogo.style.opacity = "0";
+            }
+        }
+
+        function nextSlide() { if (currentSlide < slides.length - 1) { currentSlide++; updateSlide(); } }
+        function prevSlide() { if (currentSlide > 0) { currentSlide--; updateSlide(); } }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+
+</html>

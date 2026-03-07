@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConsultorIA - Clase 2: Ecosistema Avanzado</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #3b82f6;
+            --background: #f8fafc;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --code-bg: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            overflow: hidden;
+        }
+
+        .slide {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 5rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            background-color: var(--background);
+        }
+
+        .slide.active {
+            opacity: 1;
+            z-index: 10;
+        }
+
+        .slide.dark {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .slide.dark h1,
+        .slide.dark h2,
+        .slide.dark h3 {
+            color: var(--white);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            border-bottom: 4px solid var(--accent);
+            padding-bottom: 0.5rem;
+            width: 100%;
+            text-align: left;
+        }
+
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            width: 100%;
+            text-align: left;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 1100px;
+            font-size: 1.8rem;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        li {
+            margin-bottom: 1rem;
+            padding-left: 2.5rem;
+            position: relative;
+        }
+
+        li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .prompt-box {
+            background: var(--code-bg);
+            color: #93c5fd;
+            padding: 2rem;
+            border-radius: 16px;
+            font-family: 'Inter', monospace;
+            font-size: 1.4rem;
+            width: 100%;
+            border-left: 8px solid var(--accent);
+            margin: 1.5rem 0;
+            white-space: pre-wrap;
+            box-shadow: var(--shadow);
+        }
+
+        .rationale {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .rationale::before {
+            content: "🚀 Acción y Beneficio:";
+            padding: 0.2rem 0.5rem;
+            background: var(--accent);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: var(--shadow);
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .progress {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 6px;
+            background: var(--accent);
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.3s ease;
+        }
+
+        .step-label {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--accent);
+            color: var(--white);
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            width: 100%;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid #e2e8f0;
+        }
+
+        .card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        .brand {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .brand span {
+            color: var(--accent);
+        }
+
+        .slide.dark .brand {
+            color: var(--white);
+        }
+
+        .slide.dark .brand span {
+            color: var(--accent);
+        }
+
+        .fixed-logo {
+            position: fixed;
+            top: 2rem;
+            right: 3rem;
+            z-index: 1000;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none;
+        }
+
+        .fixed-logo span {
+            color: var(--accent);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress" id="progress"></div>
+    <div class="fixed-logo" id="fixed-logo">Consultor<span>IA</span></div>
+
+    <!-- Slide 1: Portada -->
+    <div class="slide dark active">
+        <div class="brand">Consultor<span>IA</span></div>
+        <h1>Ecosistema Avanzado y<br>Automatización</h1>
+        <p style="font-size: 1.8rem; opacity: 0.8; font-weight: 500;">Sesión 2: Tu Equipo de Empleados Digitales</p>
+    </div>
+
+    <!-- Slide 2: Deep Research -->
+    <div class="slide">
+        <span class="step-label">TALLER EN VIVO</span>
+        <h2>1. Tu Analista de Mercado</h2>
+        <div class="rationale">Estamos realizando una investigación profunda automatizada para tomar decisiones basadas
+            en datos reales y tendencias actuales, eliminando horas de navegación manual.</div>
+        <h3>Copia y completa este prompt:</h3>
+        <div class="prompt-box">"Realiza una investigación profunda (Deep Research) sobre [TEMA, ej: tendencias en
+            logística]. Busca fuentes oficiales, compara 3 competidores principales y entrégame un resumen ejecutivo de
+            media página para presentarlo a gerencia."</div>
+    </div>
+
+    <!-- Slide 3: Clon de Estilo -->
+    <div class="slide">
+        <span class="step-label">TALLER EN VIVO</span>
+        <h2>2. Tu "Clon de Estilo"</h2>
+        <div class="rationale">Estamos entrenando a la IA en tu estilo de redacción personal para que tus correos y
+            reportes mantengan tu autoridad y toque personal sin que se note el uso de tecnología.</div>
+        <div class="prompt-box">"Analiza mi forma de escribir en estos textos. Fíjate en mi tono, si uso frases cortas,
+            y si suelo ir directo al grano. Aprende mi estilo y llámalo 'Mi Estilo Ejecutivo'. De ahora en adelante,
+            cuando te pida un borrador, aplícale este estilo."</div>
+    </div>
+
+    <!-- Slide 4: Gems Configuration -->
+    <div class="slide">
+        <span class="step-label">PRACTICA</span>
+        <h2>3. Construye tu "Gem"</h2>
+        <div class="rationale">Estamos creando un asistente permanente especializado que ya conoce tus manuales y reglas
+            para delegar tareas repetitivas a un "empleado digital" que nunca olvida tus preferencias.</div>
+        <div class="content">
+            <ol style="font-size: 1.5rem; margin-top: 1rem; padding-left: 2rem;">
+                <li>Busca el botón <b>"Gems"</b> en la barra lateral.</li>
+                <li>Haz clic en <b>"Nuevo Gem"</b>.</li>
+                <li>Sube tus documentos guía.</li>
+                <li>Pega las <b>Instrucciones</b> específicas.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Slide 5: Workspace Extensions -->
+    <div class="slide">
+        <span class="step-label">CONECTIVIDAD</span>
+        <h2>4. Conecta tu Oficina (@)</h2>
+        <div class="rationale">Estamos integrando la IA con tus herramientas de trabajo diarias (Gmail/Drive) para
+            convertirla en el motor de búsqueda inteligente de toda tu información privada.</div>
+        <div class="content">
+            <p>Usa el símbolo <b>@</b> para llamar a tu ecosistema:</p>
+            <ul>
+                <li><b>@Google Drive</b>: "Busca mi presupuesto de marketing y resúmelo."</li>
+                <li><b>@Gmail</b>: "¿Qué pendientes tengo con el cliente [Nombre]?"</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- Slide 5: Canvas and Nano Banana -->
+    <div class="slide">
+        <span class="step-label">INNOVACIÓN</span>
+        <h2>5. Canvas y Nano Banana</h2>
+        <div class="rationale">Estamos integrando herramientas de trabajo en tiempo real y modelos ultra-rápidos para
+            que no tengas límites técnicos al crear documentos o corregir textos rápidos.</div>
+        <div class="grid">
+            <div class="card">
+                <h4>Gemini Canvas</h4>
+                <p>Tu pizarra colaborativa para documentos complejos y código. Iteración fluida sin salir del chat.</p>
+            </div>
+            <div class="card">
+                <h4>Nano Banana</h4>
+                <p>El modelo más rápido de Gemini para tareas instantáneas y resúmenes al vuelo. Tu motor diario.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Slide 5: Con qué nos vamos -->
+    <div class="slide dark">
+        <div class="brand">Consultor<span>IA</span></div>
+        <h2>Con qué nos vamos</h2>
+        <div class="content" style="font-size: 1.6rem;">
+            <ul>
+                <li><b>Investigación sin Límites</b>: Dominaste el Deep Research para obtener conclusiones estratégicas,
+                    no solo links.</li>
+                <li><b>Tu Voz Auténtica</b>: Tu Clon de Estilo ya sabe redactar exactamente como tú lo harías,
+                    ahorrándote horas de edición.</li>
+                <li><b>Tu Equipo Digital</b>: Creaste tus propios Gems especializados que ejecutan tus reglas 24/7 sin
+                    descanso.</li>
+                <li><b>Canvas y Nano</b>: Descubriste herramientas de vanguardia para trabajar en tiempo real y de forma
+                    instantánea.</li>
+                <li><b>Oficina Inteligente</b>: Conectaste tu Drive y Gmail para navegar por tu información con la
+                    velocidad del rayo.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 6: ROI de Libertad -->
+    <div class="slide dark">
+        <div class="brand">Consultor<span>IA</span></div>
+        <h1>Has ganado 10 horas<br>extra esta semana</h1>
+        <div class="rationale" style="background: rgba(255,255,255,0.1); color: white;">Hemos implementado un sistema de
+            delegación tecnológica profesional para que puedas enfocarte en lo que realmente genera valor y recuperar 10
+            horas de tu semana.</div>
+        <p style="font-size: 2.2rem; color: var(--accent); margin-top: 2rem;">¿Qué vas a hacer con tu libertad?</p>
+        <p class="tagline">CONSULTORIA - SANTIAGO, CHILE</p>
+    </div>
+
+    <div class="controls">
+        <button class="btn" onclick="prevSlide()">←</button>
+        <button class="btn" onclick="nextSlide()">→</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progress');
+        const fixedLogo = document.getElementById('fixed-logo');
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide) slide.classList.add('active');
+            });
+            const progress = ((currentSlide) / (slides.length - 1)) * 100;
+            progressBar.style.width = `${progress}%`;
+
+            if (currentSlide > 0) {
+                fixedLogo.style.opacity = "1";
+            } else {
+                fixedLogo.style.opacity = "0";
+            }
+        }
+
+        function nextSlide() { if (currentSlide < slides.length - 1) { currentSlide++; updateSlide(); } }
+        function prevSlide() { if (currentSlide > 0) { currentSlide--; updateSlide(); } }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+
+</html>

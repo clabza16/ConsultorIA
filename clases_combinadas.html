@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Inteligencia Digital: ConsultorIA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #3b82f6;
+            --accent: #f59e0b;
+            --bg-dark: #0f172a;
+            --text-light: #f8fafc;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+            }
+
+            .content-box {
+                border: 1px solid #ddd !important;
+                box-shadow: none !important;
+                background: white !important;
+            }
+
+            .header {
+                background: #f1f5f9 !important;
+                -webkit-print-color-adjust: exact;
+            }
+
+            h1,
+            h2,
+            h3 {
+                color: #1e293b !important;
+            }
+
+            .alert {
+                border: 1px solid #cbd5e1 !important;
+                color: black !important;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            .step-list li {
+                border-left: 3px solid #2563eb !important;
+                background: #f8fafc !important;
+                color: black !important;
+            }
+
+            code {
+                background: #f1f5f9 !important;
+                color: #b45309 !important;
+                border: 1px solid #ddd !important;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+            border-radius: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-top: 10px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            border-left: 4px solid var(--primary);
+            padding-left: 15px;
+            margin-bottom: 25px;
+            color: #60a5fa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .content-box {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            color: #f59e0b;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        h4 {
+            color: #60a5fa;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .alert {
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .alert-tip {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        code {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #fbbf24;
+            font-weight: 600;
+        }
+
+        .prompt-box {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px dashed #3b82f6;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-style: italic;
+            color: #e2e8f0;
+        }
+
+        .step-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .step-list li {
+            background: rgba(255, 255, 255, 0.02);
+            margin-bottom: 12px;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .step-number {
+            font-weight: 800;
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Guía de Inteligencia Digital</h1>
+            <div class="subtitle">Manual Paso a Paso: ConsultorIA - Clases 1 y 2</div>
+        </div>
+
+        <!-- CLASE 1: ADN DIGITAL -->
+        <div class="section">
+            <h2 class="section-title">Clase 1: Construyendo tu Cimiento Digital</h2>
+
+            <div class="content-box">
+                <h3>Objetivo 1: Onboarding de la IA</h3>
+                <p>Configura Gemini no como un motor de búsqueda, sino como un colaborador que entiende tu contexto
+                    profesional.</p>
+
+                <h4>Paso a Paso: Iniciar el ADN Digital</h4>
+                <ul class="step-list">
+                    <li><span class="step-number">1</span> Ingresa a <code>gemini.google.com</code> e inicia sesión con
+                        tu Gmail.</li>
+                    <li><span class="step-number">2</span> Haz clic en <strong>"Chat Nuevo"</strong> (+) para garantizar
+                        un hilo de memoria limpio.</li>
+                    <li><span class="step-number">3</span> <strong>Inicia la Entrevista:</strong> Copia y pega el
+                        siguiente prompt:
+                        <div class="prompt-box">
+                            "Actúa como un experto en estrategia. Necesito que me hagas 5 preguntas, una por una, para
+                            conocer mi perfil profesional, mi industria, mis desafíos diarios y mi estilo de
+                            comunicación. Al terminar, genera un 'Manual de Identidad Profesional' estructurado."
+                        </div>
+                    </li>
+                    <li><span class="step-number">4</span> Responde a cada pregunta detalladamente. Una vez generado el
+                        Manual, pídale a Gemini que guarde esta configuración como base para futuras tareas en este
+                        chat.</li>
+                </ul>
+            </div>
+
+            <div class="content-box">
+                <h3>Objetivo 2: Dominar el Método R.T.C.E.</h3>
+                <p>Aprende a delegar tareas con la precisión de un Gerente Senior.</p>
+
+                <h4>Paso a Paso: Crear un Prompt Maestro</h4>
+                <ul class="step-list">
+                    <li><span class="step-number">1</span> <strong>Rol:</strong> Define quién es la IA (Ej: "Actúa como
+                        un Auditor experimentado").</li>
+                    <li><span class="step-number">2</span> <strong>Tarea:</strong> Qué quieres lograr (Ej: "Analiza los
+                        riesgos de esta oferta").</li>
+                    <li><span class="step-number">3</span> <strong>Contexto:</strong> Sube tus archivos. Usa el icono
+                        del <strong>Clip (+)</strong> para adjuntar PDFs o Excels.</li>
+                    <li><span class="step-number">4</span> <strong>Entrega:</strong> Cómo quieres ver los datos (Ej: "En
+                        una lista de prioridades del 1 al 10").</li>
+                </ul>
+            </div>
+
+            <div class="content-box">
+                <h3>Objetivo 3: Manejo y Análisis de Documentos</h3>
+                <p>Convierte a Gemini en tu "Súper-Lector". No pierdas horas leyendo archivos extensos; obtén la
+                    inteligencia que necesitas en segundos.</p>
+
+                <h4>Paso a Paso: Analizar Archivos (PDF, Excel, Word)</h4>
+                <ul class="step-list">
+                    <li><span class="step-number">1</span> Ubica el icono del <strong>Clip (+)</strong> o
+                        <strong>"Añadir archivo"</strong> en la barra de escritura de Gemini.</li>
+                    <li><span class="step-number">2</span> Selecciona tu documento (Ej: Un reporte de ventas o un
+                        contrato largo).</li>
+                    <li><span class="step-number">3</span> <strong>Dale el Filtro:</strong> No pidas un resumen
+                        genérico. Usa este prompt maestro:
+                        <div class="prompt-box">
+                            "Analiza este documento basándote en mi Manual de Identidad Profesional. Dime los 3 puntos
+                            clave que más afectan a mi rol y qué decisiones debería tomar basándome en esta
+                            información."
+                        </div>
+                    </li>
+                    <li><span class="step-number">4</span> <strong>Extracción de Datos:</strong> Si es un Excel o tabla,
+                        pide: "Convierte los datos de este archivo en una tabla comparativa resaltando los valores más
+                        altos y más bajos."</li>
+                </ul>
+            </div>
+
+            <div class="content-box">
+                <h3>Objetivo 4: Visión Artificial y Digitalización</h3>
+                <p>Digitaliza tus notas físicas para que sean editables y accionables.</p>
+
+                <h4>Paso a Paso: De la Pizarra al Plan de Acción</h4>
+                <ul class="step-list">
+                    <li><span class="step-number">1</span> Toma una foto nítida de tu pizarra, cuaderno o nota a mano.
+                    </li>
+                    <li><span class="step-number">2</span> Sube la imagen a Gemini pulsando el icono de
+                        <strong>Imagen</strong>.</li>
+                    <li><span class="step-number">3</span> <strong>Digitaliza:</strong> Usa el comando:
+                        <div class="prompt-box">
+                            "Extrae el texto de esta imagen de forma fiel. Luego, organízalo como una minuta de reunión
+                            con: Asistentes, Temas Tratados y una lista de Tareas con sus responsables."
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CLASE 2: ESPECIALIZACIÓN -->
+        <div class="section">
+            <h2 class="section-title">Clase 2: Especialización y Equipo Digital</h2>
+
+            <div class="content-box">
+                <h3>Objetivo 5: Clonación de Estilo Humano</h3>
+                <p>Elimina el sonido robótico de la IA y haz que escriba exactamente como tú.</p>
+
+                <h4>Paso a Paso: El Clon de Estilo</h4>
+                <ul class="step-list">
+                    <li><span class="step-number">1</span> Ubica 3 correos o documentos redactados íntegramente por ti
+                        que reflejen tu mejor tono.</li>
+                    <li><span class="step-number">2</span> Pégalos en el chat de Gemini con el siguiente prompt:
+                        <div class="prompt-box">
+                            "Analiza estos textos y aprende mi estilo. Fíjate en mi vocabulario, la longitud de mis
+                            frases y mi formalidad. Llama a esto 'Mi Estilo Ejecutivo'. ¿Entendido?"
+                        </div>
+                    </li>
+                    <li><span class="step-number">3</span> <strong>Validación:</strong> Pídele una tarea de redacción
+                        nueva: "Redacta un memo sobre [tema] usando 'Mi Estilo Ejecutivo'."</li>
+                </ul>
+            </div>
+
+            <div class="content-box">
+                <h3>Objetivo 6: Crear tu "Gem" Especializado</h3>
+                <p>Crea asistentes permanentes para tareas repetitivas (Ej: Auditoría, Marketing o Redacción).</p>
+
+                <h4>Paso a Paso: Configurar un Gem</h4>
+                <ul class="step-list">
+                    <li><span class="step-number">1</span> En la barra lateral de Gemini, busca y haz clic en
+                        <strong>"Gems"</strong>.</li>
+                    <li><span class="step-number">2</span> Selecciona <strong>"Nuevo Gem"</strong>.</li>
+                    <li><span class="step-number">3</span> <strong>Instrucciones:</strong> Define el Rol y la Regla de
+                        Oro (Ej: "Eres mi Consultor de Estrategia. Nunca aceptes una propuesta que supere el 20% del
+                        presupuesto indicado").</li>
+                    <li><span class="step-number">4</span> <strong>Guardar:</strong> Dale un nombre (Ej: "Filtro de
+                        Proyectos"). Ahora, este experto estará disponible con un clic en tu barra lateral.</li>
+                </ul>
+            </div>
+
+            <div class="content-box">
+                <h3>Actividad Final: Conectando el Ecosistema</h3>
+                <p>Usa las extensiones de Google Workspace para automatizar tu flujo real.</p>
+                <ul class="step-list">
+                    <li><span class="step-number">@Google Drive</span> Escribe <code>@Google Drive</code> y el nombre de
+                        un archivo para que Gemini lo lea y te dé un resumen sin abrirlo.</li>
+                    <li><span class="step-number">@Gmail</span> Escribe <code>@Gmail</code> para buscar hilos de
+                        conversación y pedir borradores de respuesta inmediatos.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="alert alert-tip">
+            <strong>Recupera tu Libertad:</strong> El éxito no es usar la IA más tiempo, sino que la IA trabaje más para
+            que tú uses menos tiempo. <strong>Tu nueva vida profesional comienza hoy.</strong>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 ConsultorIA - Resultados que se sienten como magia.
+        </div>
+    </div>
+</body>
+
+</html>

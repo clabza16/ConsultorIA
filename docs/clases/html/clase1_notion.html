@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConsultorIA - Clase 1: ADN Digital en Notion</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #3b82f6;
+            --notion-blue: #0077b5;
+            --background: #f8fafc;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --code-bg: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            overflow: hidden;
+        }
+
+        .slide {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 5rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            background-color: var(--background);
+        }
+
+        .slide.active {
+            opacity: 1;
+            z-index: 10;
+        }
+
+        .slide.dark {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .slide.dark h1, .slide.dark h2 { color: var(--white); }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            border-bottom: 4px solid var(--accent);
+            padding-bottom: 0.5rem;
+            width: 100%;
+        }
+
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 1100px;
+            font-size: 1.6rem;
+        }
+
+        .prompt-box {
+            background: var(--code-bg);
+            color: #93c5fd;
+            padding: 2rem;
+            border-radius: 16px;
+            font-family: 'Inter', monospace;
+            font-size: 1.3rem;
+            width: 100%;
+            border-left: 8px solid var(--accent);
+            margin: 1.5rem 0;
+            white-space: pre-wrap;
+            box-shadow: var(--shadow);
+        }
+
+        .rationale {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .rationale::before {
+            content: "💡 Estrategia:";
+            background: var(--accent);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            width: 100%;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid #e2e8f0;
+        }
+
+        .card h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .brand {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            position: fixed;
+            top: 2rem;
+            right: 3rem;
+            z-index: 1000;
+        }
+
+        .brand span { color: var(--accent); }
+
+        .slide.dark .brand { color: white; }
+
+        .progress {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 6px;
+            background: var(--accent);
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.3s ease;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover { background: var(--accent); transform: scale(1.1); }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        th, td { padding: 1.2rem; text-align: left; border-bottom: 1px solid #e2e8f0; }
+        th { background: #f1f5f9; color: var(--primary); font-weight: 800; }
+    </style>
+</head>
+
+<body>
+    <div class="progress" id="progress"></div>
+    <div class="brand">Consultor<span>IA</span></div>
+
+    <!-- Slide 1: Portada -->
+    <div class="slide dark active">
+        <div class="subtitle">Personalizado para Notion</div>
+        <h1>ADN Digital en el<br>Ecosistema Notion</h1>
+        <p style="font-size: 1.8rem; opacity: 0.8;">Clase 1: Multiplica tu estructura con IA</p>
+    </div>
+
+    <!-- Slide 2: Notion vs Gemini -->
+    <div class="slide">
+        <h2>Notion AI vs Gemini</h2>
+        <div class="rationale">No compiten, se complementan. Uno es tu cerebro externo, el otro tu memoria operativa.</div>
+        <div class="card-grid">
+            <div class="card">
+                <h4>Gemini</h4>
+                <p>Tu <b>Consultor Externo</b>. Ideal para investigar, analizar PDFs masivos e ideación creativa profunda.</p>
+            </div>
+            <div class="card">
+                <h4>Notion AI</h4>
+                <p>Tu <b>Asistente Interno</b>. Experto en organizar tus páginas, resumir notas y redactar dentro de tu flujo.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Taller ADN Step 1 -->
+    <div class="slide">
+        <div class="subtitle">Taller en Vivo</div>
+        <h2>Instala tu ADN Digital</h2>
+        <div class="content">
+            <p>1. Ve a Gemini y lanza la "Entrevista de Perfilado":</p>
+            <div class="prompt-box">"Actúa como un experto en estrategia. Hazme una entrevista de 5 preguntas, una a una, para definir mi perfil profesional, mis desafíos en Notion y mi estilo de comunicación. Al terminar, genera mi 'Manual de Identidad Profesional'."</div>
+            <p>2. El ancla: Copia el resultado en una página de Notion llamada <b>"Mi Cerebro"</b>.</p>
+        </div>
+    </div>
+
+    <!-- Slide 4: Método RTCE en Notion -->
+    <div class="slide">
+        <h2>El Método R.T.C.E. en Notion</h2>
+        <div class="rationale">Usa el comando <b>/ai</b> o <b>Space</b> directamente sobre tus bloques de texto.</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Parte</th>
+                    <th>En Notion AI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Rol</b></td>
+                    <td>"Actúa como experto en [Tu Industria]..."</td>
+                </tr>
+                <tr>
+                    <td><b>Tarea</b></td>
+                    <td>"...redacta este resumen..."</td>
+                </tr>
+                <tr>
+                    <td><b>Contexto</b></td>
+                    <td>"...usa la información de la tabla arriba..."</td>
+                </tr>
+                <tr>
+                    <td><b>Entrega</b></td>
+                    <td>"...formato lista de chequeo."</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Slide 5: Visión Artificial -->
+    <div class="slide">
+        <h2>De la Pizarra a la Base de Datos</h2>
+        <div class="rationale">Aprovecha la App de Notion para capturar el mundo físico.</div>
+        <div class="content">
+            <ol style="margin-left: 2rem; line-height: 2;">
+                <li>Sube la foto de tu nota o pizarra a Notion.</li>
+                <li>Usa <b>Notion AI</b> con el comando: "Extraer texto".</li>
+                <li>Luego pide: <i>"Convierte esto en una base de datos con columnas para Tarea y Fecha."</i></li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Slide 6: Cierre -->
+    <div class="slide dark">
+        <h1>Tu Primera Victoria</h1>
+        <div class="content" style="text-align:center;">
+            <p style="font-size: 2rem;">Toma esa página desordenada hoy mismo.</p>
+            <div class="prompt-box" style="display:inline-block; max-width: 800px;">"Limpia esto, aplica mi tono profesional del 'Manual de Identidad' y crea una lista de pasos a seguir."</div>
+            <p style="margin-top: 2rem; color: var(--accent); font-weight: 700;">¡NOS VEMOS EN LA CLASE 2!</p>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="btn" onclick="prevSlide()">←</button>
+        <button class="btn" onclick="nextSlide()">→</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progress');
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide) slide.classList.add('active');
+            });
+            progressBar.style.width = `${(currentSlide / (slides.length - 1)) * 100}%`;
+        }
+
+        function nextSlide() { if (currentSlide < slides.length - 1) { currentSlide++; updateSlide(); } }
+        function prevSlide() { if (currentSlide > 0) { currentSlide--; updateSlide(); } }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+</html>
