@@ -26,6 +26,12 @@ body {
     position: relative;
 }
 
+/* Prevent any section from bleeding outside viewport */
+section, nav, footer {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--background);
@@ -167,6 +173,7 @@ nav {
 
 .hero-image img {
     width: 100%;
+    max-width: 100%;
     border-radius: 20px;
     box-shadow: var(--shadow);
 }
@@ -674,6 +681,11 @@ footer {
         min-width: 0 !important;
     }
 
+    /* Problem */
+    .problem {
+        padding: 60px 0;
+    }
+
     /* Cards */
     .problem h2 {
         font-size: 1.85rem;
@@ -850,6 +862,7 @@ footer {
     /* Testimonials */
     .testimonials {
         padding: 60px 0;
+        overflow: hidden;
     }
 
     .testimonials h2 {
@@ -858,8 +871,7 @@ footer {
     }
 
     .testimonials-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1.25rem;
     }
 }
 
@@ -1108,7 +1120,7 @@ footer {
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: 2rem;
 }
 
