@@ -5,7 +5,7 @@
 ## 🗓️ LUNES: El Shock de la Eficiencia
 
 ### Video 1 (AM): El Gancho Maestro (Autoridad)
-*   **Hook (0-2s):** (A cámara, sosteniendo una taza de café, mirando el reloj) "Son las 9:15 AM y ya ahorré 3 horas de mi lunes... antes de terminar mi primer café."
+*   **Hook (0-2s):** (A cámara, sosteniendo una taza de café, mirando el reloj) "9:15 AM y ya saqué la pega más pesada del lunes. ¿Cómo? Con IA."
 *   **Diálogo:** 
     "No fue magia, ni despertarme a las 5 AM. Fue delegar mi bandeja de entrada a un agente de IA personalizado.
     Mientras yo desayunaba, la IA clasificó 45 correos, resumió los 5 más importantes y me dejó redactados los borradores de respuesta listos para revisar.
@@ -18,7 +18,7 @@
 *   **CTA:** "Si quieres ver cómo configuré este agente, comenta **'CORREO'** y te mando los pasos."
 
 ### Video 2 (PM): Curiosidad (Engagement)
-*   **Hook (0-2s):** (Caminando por la calle o oficina) "Pausa un segundo. Si mañana te regalaran 2 horas extra de libertad total al día... ¿qué harías con ellas?"
+*   **Hook (0-2s):** (Caminando por la calle o oficina) "Pausa ahí un segundo. ¿Qué harías si hoy te pudieras ir a la casa 2 horas antes?"
 *   **Diálogo:** 
     "La mayoría de los profesionales en Chile pierden 10 horas a la semana —¡una jornada completa!— en tareas que una máquina hace mejor.
     Copiar datos, resumir minutas, redactar informes genéricos...
@@ -35,7 +35,7 @@
 ## 🗓️ MARTES: Definición y Autoridad
 
 ### Video 1 (AM): IA Nivel Tío (Educativo)
-*   **Hook (0-2s):** "Le expliqué qué es la IA a mi tío de 60 años y ahora él la usa más que yo en su oficina."
+*   **Hook (0-2s):** "Le enseñé a mi socio que no cacha nada de tech a usar IA y ahora la usa más que yo."
 *   **Diálogo:** 
     "Muchos piensan que la IA son robots reemplazando humanos. Olvídate de eso.
     La mejor forma de entenderlo es como una 'Calculadora para el Lenguaje'. 
@@ -49,7 +49,7 @@
 *   **CTA:** "Guarda este video. Es la explicación más simple que vas a encontrar."
 
 ### Video 2 (PM): El Error Fatal (Miedo/FOMO)
-*   **Hook (0-2s):** (Tono serio, acercándose a la lente) "Hay un error silencioso que te va a volver irrelevante en menos de 24 meses."
+*   **Hook (0-2s):** (Tono serio, acercándose a la lente) "Quedarse fuera de la IA hoy es como haber ignorado el Excel en los 90. Te vas a quedar atrás."
 *   **Diálogo:** 
     "Y no, no es 'no saber usar IA'. El error es creer que la IA es 'cosa de los jóvenes' o 'para gente de tecnología'.
     Si eres abogado, contador, gerente o ingeniero senior... tu verdadera competencia no es un bot. Es otro profesional con tu misma experiencia, pero que ya sabe usar estas herramientas para producir 5 veces más que tú.
@@ -65,7 +65,7 @@
 ## 🗓️ MIÉRCOLES: La Realidad Sin Filtro
 
 ### Video 1 (AM): "Odio la IA Fácil" (Controversia)
-*   **Hook (0-2s):** "Voy a decir algo impopular: Odio los videos que dicen que la IA es 'fácil' y que te harás rico mañana."
+*   **Hook (0-2s):** "Me tienen chato con los videos que dicen que la IA es fácil y que te harás rico mañana."
 *   **Diálogo:** 
     "La realidad es que la mayoría de la gente que prueba ChatGPT se frustra a los 5 minutos porque no obtiene lo que quiere.
     Es que no es apretar un botón y ya. Implementar IA en un negocio real requiere estrategia, ética y entender tus procesos.
@@ -77,7 +77,7 @@
 *   **CTA:** "Comenta **'OPINIÓN'** si también estás cansado del humo sobre la tecnología."
 
 ### Video 2 (PM): El Temor del Gerente (Seguridad)
-*   **Hook (0-2s):** "¿Sabes por qué los gerentes senior en Chile le tienen pánico a ChatGPT? Y no es por el reemplazo laboral."
+*   **Hook (0-2s):** "¿Sabes por qué a los gerentes en Chile les da 'cuco' el ChatGPT? Y no es por perder la pega."
 *   **Diálogo:** 
     "Su mayor miedo es la seguridad. '¿Dónde terminan los datos confidenciales de mi empresa?'. 
     Y tienen razón. Meter contratos o balances en versiones gratuitas es un riesgo enorme.
@@ -94,7 +94,7 @@
 ## 🗓️ JUEVES: Utilidad Inmediata
 
 ### Video 1 (AM): El Primer Prompt (Tutorial)
-*   **Hook (0-2s):** "Copia y pega este prompt exacto para resumir reuniones de 1 hora en 30 segundos. De nada."
+*   **Hook (0-2s):** "Hagámosla corta: copia este prompt para resumir reuniones de 1 hora en 30 segundos."
 *   **Diálogo:** 
     (Voz en off mientras se ve la pantalla) 
     "Usa esta estructura: 'Actúa como un asistente ejecutivo de alto nivel. Toma esta transcripción, extrae los 3 acuerdos principales, las 5 tareas pendientes con sus responsables y redacta un correo para el equipo en tono profesional'. 
@@ -107,7 +107,7 @@
 *   **CTA:** "Si quieres mi guía de los 5 prompts esenciales, dale like y comenta **'PROMPTS'**."
 
 ### Video 2 (PM): Ahorro Excel (Demostración)
-*   **Hook (0-2s):** "Acabo de ahorrarle a un cliente 5 horas de pelear con Excel... usando solo una frase."
+*   **Hook (0-2s):** "Le saqué un cacho de 5 horas a un cliente con una sola instrucción en Excel."
 *   **Diálogo:** 
     "Mucha gente no sabe que la IA puede escribir macros complejas o limpiar bases de datos desordenadas en segundos.
     Le pedimos: 'Crea un script para consolidar estas 12 pestañas y resaltar los valores atípicos'. 
@@ -124,7 +124,7 @@
 ## 🗓️ VIERNES: Resultados Reales
 
 ### Video 1 (AM): Caso Miguel (Prueba Social)
-*   **Hook (0-2s):** "Este es Miguel. Pasó de trabajar 12 horas diarias a solo 8... y su jefe cree que está trabajando más que antes."
+*   **Hook (0-2s):** "Miguel pasaba de largo todos los viernes por la pega. Ahora cierra a las 6 y se va a la casa."
 *   **Diálogo:** 
     "Miguel es gerente comercial. Tenía el escritorio lleno de reportes pendientes. 
     Aplicamos nuestro método ADN Digital: identificamos sus tareas repetitivas, entrenamos una IA con sus documentos y automatizamos su reporte semanal.
@@ -156,7 +156,7 @@
 ## 🗓️ SÁBADO: Confianza y Estilo de Vida
 
 ### Video 1 (AM): Mi Setup (Autoridad)
-*   **Hook (0-2s):** "Muchos me preguntan qué super computadora uso para correr IA. La respuesta les va a dar risa."
+*   **Hook (0-2s):** "¿Crees que necesitas un PC de la NASA para usar IA? Te estai pegando el show. Mira esto."
 *   **Diálogo:** 
     "Este es mi 'laboratorio'. Una laptop normal, una buena conexión a internet y, sobre todo, curiosidad.
     No necesitas servidores en la NASA. Todo lo que te enseño ocurre en la nube.
@@ -169,7 +169,7 @@
 *   **CTA:** "Dale like si también pensabas que necesitabas ser programador."
 
 ### Video 2 (PM): Errores de Novato (Valor)
-*   **Hook (0-2s):** "Para de perder tiempo. Aquí hay 3 herramientas de IA que están de moda pero que no sirven para nada en el mundo real."
+*   **Hook (0-2s):** "No te compren la pomada: 3 herramientas de IA que son una pérdida de tiempo total."
 *   **Diálogo:** 
     "Primero: Generadores de avatares bailando. Divertido, pero no ayuda a tu negocio.
     Segundo: Resumidores genéricos que omiten los detalles técnicos importantes.
