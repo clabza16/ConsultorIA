@@ -1009,7 +1009,7 @@ footer {
     display: flex;
     gap: 2rem;
     margin-left: auto;
-    margin-right: 5.5rem;
+    margin-right: 8rem;
 }
 
 .nav-links a {
@@ -1167,15 +1167,10 @@ footer {
     font-weight: 800;
 }
 
-.testimonial-author strong {
-    display: block;
-    font-size: 0.95rem;
-    color: var(--primary);
-}
-
 .testimonial-author span {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
+    font-weight: 500;
 }
 
 /* Header Contact Buttons */
