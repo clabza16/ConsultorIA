@@ -7,13 +7,29 @@
     <title>ConsultorIA | Domina la IA desde 0 y Potencia tus Ideas</title>
     <meta name="description"
         content="Aprende Inteligencia Artificial desde cero. Potencia tus ideas, recupera tu tiempo y escala tu negocio con un enfoque práctico para no-técnicos.">
-    <link rel="stylesheet" href="style.css?v=1.2">
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ConsultorIA | Domina la IA desde 0 y Potencia tus Ideas">
+    <meta property="og:description" content="Aprende IA desde cero en 2 sesiones. Recupera tu tiempo, automatiza tareas y escala tu negocio sin conocimientos técnicos.">
+    <meta property="og:image" content="assets/consultoria_hero.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ConsultorIA | Domina la IA desde 0">
+    <meta name="twitter:description" content="Programa práctico de IA para no-técnicos. 2 sesiones, resultados reales.">
+    <meta name="twitter:image" content="assets/consultoria_hero.png">
+    <link rel="stylesheet" href="style.css?v=1.3">
 </head>
 
 <body>
     <nav>
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="container nav-container">
             <div class="brand">Consultor<span>IA</span></div>
+            <nav class="nav-links">
+                <a href="#programa">Programa</a>
+                <a href="#precios">Precios</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
             <div class="header-contact">
                 <a href="https://wa.me/56996829223" class="contact-mini-btn whatsapp" title="WhatsApp">
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
@@ -113,12 +129,71 @@
                         <span class="class-label">Sesión 2</span>
                         <h3>Escalamiento y Automatización Simple</h3>
                         <p>Dominarás herramientas de <b>Deep Research y Visualización Avanzada</b> para proyectar tu
-                            negocio al siguiente nivel. Aprenderás a crear tus propios <b>Gems</b>: asistentes
-                            especializados que ejecutan tus ideas y escalan tus procesos de forma autónoma.</p>
+                            negocio al siguiente nivel. Aprenderás a crear tus propios <b>Gems (agentes de IA
+                            especializados)</b>: asistentes configurados por ti que ejecutan tus ideas y escalan tus
+                            procesos de forma autónoma, sin que tengas que intervenir cada vez.</p>
                     </div>
                     <div class="class-visual">
                         <img src="assets/clase_4_agentes.png" alt="Investigación y Agentes de IA"
                             style="width: 100%; border-radius: 12px; box-shadow: var(--shadow);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-inner">
+                <div class="about-avatar">CA</div>
+                <div class="about-text">
+                    <span class="section-tag">Tu Instructor</span>
+                    <h2>Claudio Albornoz</h2>
+                    <p>Especialista en IA aplicada para profesionales no técnicos, con experiencia acompañando a abogados, gerentes, médicos y emprendedores a transformar su forma de trabajar usando inteligencia artificial — sin una línea de código.</p>
+                    <p>Mi metodología está diseñada para personas ocupadas: sin tecnicismos, sin cursos interminables. Solo herramientas concretas que usarás desde la primera sesión para recuperar tu tiempo y potenciar tus resultados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <span class="section-tag" style="text-align: center; display: block;">Historias Reales</span>
+            <h2>Lo que dicen quienes ya lo vivieron</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Excelente curso para abogados sin grandes habilidades tecnológicas. Aprendí a hacer cosas que no sabía que existían, de manera muy amigable y entretenida. 100% recomendable... Ahora a jugar practicando."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SV</div>
+                        <div>
+                            <strong>Soledad Vergara</strong>
+                            <span>Abogada</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Muchas gracias Claudio por tu entrega y paciencia para adaptar las clases a mis requerimientos laborales. Ese valor agregado hace la diferencia para seguir con tus asesorías y aumentar mis conocimientos."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">CR</div>
+                        <div>
+                            <strong>Carolina Reyes</strong>
+                            <span>Gerente de Operaciones</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Como médico, manejo volúmenes enormes de información clínica. Siempre creí que la IA era para ingenieros. Claudio me demostró lo contrario: en dos sesiones automaticé partes de mi trabajo que antes me consumían horas. Una herramienta que ya no imagino no tener."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">FR</div>
+                        <div>
+                            <strong>Dr. Felipe Rojas</strong>
+                            <span>Médico General</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -141,13 +216,13 @@
                     $50.000
                     <span class="offer-label">CLP</span>
                 </div>
-                <div style="color: var(--accent); font-weight: bold; margin-bottom: 1rem;">OFERTA ESPECIAL MARZO</div>
+                <div style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Promoción válida durante todo marzo 2026</div>
                 <ul class="pricing-features">
-                    <li><i>✓</i> <b>Tu Clon Digital</b></li>
-                    <li><i>✓</i> <b>Investigador Experto 24/7</b></li>
-                    <li><i>✓</i> <b>Diseño Pro Automático</b></li>
-                    <li><i>✓</i> <b>Tu Equipo de Asistentes</b></li>
-                    <li><i>✓</i> <b>Control Total</b></li>
+                    <li><i>✓</i> <div class="feature-text"><b>Tu Clon Digital</b><span>Una IA entrenada con tu identidad, tono y visión de negocio</span></div></li>
+                    <li><i>✓</i> <div class="feature-text"><b>Investigador Experto 24/7</b><span>Análisis profundo de documentos, mercados e información compleja</span></div></li>
+                    <li><i>✓</i> <div class="feature-text"><b>Diseño Pro Automático</b><span>Visualizaciones y presentaciones generadas por IA en minutos</span></div></li>
+                    <li><i>✓</i> <div class="feature-text"><b>Tu Equipo de Asistentes</b><span>Agentes especializados que ejecutan tareas de forma autónoma</span></div></li>
+                    <li><i>✓</i> <div class="feature-text"><b>Control Total</b><span>Tú defines los parámetros; la IA trabaja según tu criterio</span></div></li>
                 </ul>
                 <a href="#agendar" class="btn btn-primary btn-booking"
                     style="width: 100%; padding: 1.5rem; font-size: 1.2rem; border-radius: 16px;">Reservar mi Cupo</a>
