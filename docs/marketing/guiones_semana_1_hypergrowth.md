@@ -1,4 +1,4 @@
-﻿# Guiones Detallados Semana 1: Estrategia de Hiper-Crecimiento ConsultorIA
+﻿# Guiones Detallados Semana 1: Estrategia de Hiper-Crecimiento ConsultorIA (Versión Simplificada y Llamativa)
 
 ---
 
@@ -7,58 +7,45 @@
 ### Video 1 (AM): El Gancho Maestro (Autoridad)
 *   **Hook (0-2s):** (A cámara, sosteniendo una taza de café, mirando el reloj) "9:15 AM y ya saqué la pega más pesada del lunes. ¿Cómo? Con IA."
 *   **Diálogo:** 
-    "No fue magia, ni despertarme a las 5 AM. Fue delegar mi bandeja de entrada a un agente de IA personalizado.
-    Mientras yo desayunaba, la IA clasificó 45 correos, resumió los 5 más importantes y me dejó redactados los borradores de respuesta listos para revisar.
-    Lo que a un asistente humano le toma 2 horas, a mi sistema le tomó 40 segundos. 
-    Esto no es el futuro, es lo que estamos instalando hoy en ConsultorIA."
-*   **Visuales:** 
-    - 0-3s: Primer plano del autor con café.
-    - 3-10s: Grabación de pantalla rápida de correos moviéndose solos o ChatGPT generando texto.
-    - 10-15s: Autor señalando a cámara.
-*   **CTA:** "Si quieres ver cómo configuré este agente, comenta **'CORREO'** y te mando los pasos."
+    "No es magia, es un sistema. 
+    Mientras desayunaba, mi agente de IA leyó 40 correos, los resumió y me dejó las respuestas listas para enviar.
+    40 minutos de 'lata' resumidos en 15 segundos de revisión. 
+    Esto es ConsultorIA: menos burocracia, más tiempo real."
+*   **Visuales:** Corte rápido entre tu cara y la pantalla de correos procesándose.
+*   **CTA:** "Comenta **'CORREO'** y te muestro el sistema."
 
 ### Video 2 (PM): Curiosidad (Engagement)
-*   **Hook (0-2s):** (Caminando por la calle o oficina) "Pausa ahí un segundo. ¿Qué harías si hoy te pudieras ir a la casa 2 horas antes?"
+*   **Hook (0-2s):** "¿Qué harías si hoy te pudieras ir a la casa 2 horas antes?"
 *   **Diálogo:** 
-    "La mayoría de los profesionales en Chile pierden 10 horas a la semana —¡una jornada completa!— en tareas que una máquina hace mejor.
-    Copiar datos, resumir minutas, redactar informes genéricos...
-    ConsultorIA no nació para que trabajes más, sino para que recuperes ese tiempo para lo que realmente importa: tu familia, tu salud o tu próximo gran proyecto.
-    Esta semana te voy a mostrar exactamente cómo lo estamos haciendo."
-*   **Visuales:** 
-    - 0-5s: Caminando, mirando a cámara.
-    - 5-12s: Texto en pantalla: "10 HORAS PERDIDAS / SEMANA".
-    - 12-18s: Autor sonriendo, tono empático.
-*   **CTA:** "Sígueme para ver cómo recuperamos esas 10 horas juntos."
+    "En Chile perdemos 10 horas a la semana en tareas que una máquina hace mejor. 
+    10 horas que podrías pasar con tu familia o en el gimnasio.
+    ConsultorIA no te da más trabajo, te devuelve tu vida. 
+    Quédate esta semana, te voy a enseñar cómo."
+*   **Visuales:** Caminando, mirando fijo a cámara, tono relax.
+*   **CTA:** "Sígueme para recuperar tus 10 horas."
 
 ---
 
 ## 🗓️ MARTES: Definición y Autoridad
 
 ### Video 1 (AM): IA Nivel Tío (Educativo)
-*   **Hook (0-2s):** "Le enseñé a mi socio que no cacha nada de tech a usar IA y ahora la usa más que yo."
+*   **Hook (0-2s):** "Le enseñé a mi socio que no cacha nada de tech a usar IA... y ahora no la suelta."
 *   **Diálogo:** 
-    "Muchos piensan que la IA son robots reemplazando humanos. Olvídate de eso.
-    La mejor forma de entenderlo es como una 'Calculadora para el Lenguaje'. 
-    Antes hacías cálculos a mano, ahora usas Excel. Antes escribías cada reporte desde cero, ahora usas IA.
-    Si sabes darle la instrucción correcta —lo que llamamos un prompt—, ella hace el 80% del trabajo pesado en segundos.
-    Es el lenguaje puesto a trabajar por ti."
-*   **Visuales:** 
-    - 0-4s: Tono anecdótico, cercano.
-    - 4-12s: Texto animado: "Calculadora de Lenguaje".
-    - 12-20s: Gesticulando con las manos para mostrar escala (80% vs 20%).
-*   **CTA:** "Guarda este video. Es la explicación más simple que vas a encontrar."
+    "La IA no son robots, es una 'Calculadora de Texto'. 
+    Antes hacías cuentas a mano, ahora usas Excel. 
+    Antes redactabas informes desde cero, ahora usas IA. 
+    Tú das la idea, ella hace el trabajo sucio. Así de simple."
+*   **Visuales:** Texto grande: "CALCULADORA DE TEXTO".
+*   **CTA:** "Guarda esto si aún no sabes qué es la IA."
 
 ### Video 2 (PM): El Error Fatal (Miedo/FOMO)
-*   **Hook (0-2s):** (Tono serio, acercándose a la lente) "Quedarse fuera de la IA hoy es como haber ignorado el Excel en los 90. Te vas a quedar atrás."
+*   **Hook (0-2s):** "Quedarse fuera de la IA hoy es como haber ignorado el Excel en los 90. Te vas a quedar atrás."
 *   **Diálogo:** 
-    "Y no, no es 'no saber usar IA'. El error es creer que la IA es 'cosa de los jóvenes' o 'para gente de tecnología'.
-    Si eres abogado, contador, gerente o ingeniero senior... tu verdadera competencia no es un bot. Es otro profesional con tu misma experiencia, pero que ya sabe usar estas herramientas para producir 5 veces más que tú.
-    La brecha se está abriendo hoy. No esperes a que sea demasiado tarde."
-*   **Visuales:** 
-    - 0-3s: Primer plano dramático.
-    - 3-12s: Autor sentado en escritorio, tono de consultor senior.
-    - 12-20s: Texto: "EXPERIENCIA + IA = INVENCIBLE".
-*   **CTA:** "¿Quieres empezar? Mira el link en mi perfil para agendar una sesión inicial."
+    "Tu competencia ya está usando esto para producir el triple que tú. 
+    No te va a reemplazar un bot, te va a reemplazar el colega que sí sabe usarlo. 
+    La brecha se abre hoy. ¿De qué lado vas a estar?"
+*   **Visuales:** Mirada seria, zoom in lento.
+*   **CTA:** "Agenda en el link de mi bio si quieres subirte al carro hoy."
 
 ---
 
@@ -67,27 +54,22 @@
 ### Video 1 (AM): "Odio la IA Fácil" (Controversia)
 *   **Hook (0-2s):** "Me tienen chato con los videos que dicen que la IA es fácil y que te harás rico mañana."
 *   **Diálogo:** 
-    "La realidad es que la mayoría de la gente que prueba ChatGPT se frustra a los 5 minutos porque no obtiene lo que quiere.
-    Es que no es apretar un botón y ya. Implementar IA en un negocio real requiere estrategia, ética y entender tus procesos.
-    Si buscas magia, sigue de largo. Si buscas un sistema de productividad serio para tu carrera, aquí es donde empezamos."
-*   **Visuales:** 
-    - 0-5s: Autor cruzado de brazos, tono desafiante.
-    - 5-15s: Pantallazos rápidos de miniaturas de YouTube 'Hacerse rico con IA' tachadas.
-    - 15-22s: Autor hablando con autoridad.
-*   **CTA:** "Comenta **'OPINIÓN'** si también estás cansado del humo sobre la tecnología."
+    "La IA no es magia, es técnica. 
+    La mayoría se frustra porque no sabe pedir lo que quiere. 
+    Aquí no vendemos humo, vendemos sistemas de productividad para profesionales serios. 
+    Si buscas el camino corto, sigue de largo."
+*   **Visuales:** Pantallazos de 'falsa magia' tachados con un sticker de "HUMO".
+*   **CTA:** "Comenta **'SINCERO'** si buscas resultados reales."
 
 ### Video 2 (PM): El Temor del Gerente (Seguridad)
-*   **Hook (0-2s):** "¿Sabes por qué a los gerentes en Chile les da 'cuco' el ChatGPT? Y no es por perder la pega."
+*   **Hook (0-2s):** "¿Por qué a los gerentes en Chile les da 'cuco' el ChatGPT? Y no es por perder la pega."
 *   **Diálogo:** 
-    "Su mayor miedo es la seguridad. '¿Dónde terminan los datos confidenciales de mi empresa?'. 
-    Y tienen razón. Meter contratos o balances en versiones gratuitas es un riesgo enorme.
-    En ConsultorIA enseñamos a crear entornos seguros, privados y con 'vallas de seguridad' para que uses el poder de la IA sin exponer un solo dato sensible.
-    Mañana te muestro el tutorial exacto para hacerlo."
-*   **Visuales:** 
-    - 0-4s: Tono confidente.
-    - 4-12s: Icono de candado en pantalla con texto "PRIVACIDAD".
-    - 12-20s: Autor señalando que viene algo importante mañana.
-*   **CTA:** "Dale al (+) para no perderte el tutorial de seguridad de mañana."
+    "Es por los datos. Meter balances o contratos en el ChatGPT gratuito es un suicidio corporativo. 
+    En ConsultorIA creamos entornos privados. 
+    Usas el poder de la IA, pero tus datos no salen de tu control. 
+    Mañana te enseño el tutorial."
+*   **Visuales:** Icono de candado blindado. Tono de 'secreto industrial'.
+*   **CTA:** "Dale al (+) para ver el tutorial de seguridad mañana."
 
 ---
 
@@ -96,28 +78,21 @@
 ### Video 1 (AM): El Primer Prompt (Tutorial)
 *   **Hook (0-2s):** "Hagámosla corta: copia este prompt para resumir reuniones de 1 hora en 30 segundos."
 *   **Diálogo:** 
-    (Voz en off mientras se ve la pantalla) 
-    "Usa esta estructura: 'Actúa como un asistente ejecutivo de alto nivel. Toma esta transcripción, extrae los 3 acuerdos principales, las 5 tareas pendientes con sus responsables y redacta un correo para el equipo en tono profesional'. 
-    Miren el resultado... estructurado, claro y listo para enviar.
-    Acabo de ahorrarte 45 minutos de redacción."
-*   **Visuales:** 
-    - 0-2s: Autor señalando el texto del prompt en pantalla.
-    - 2-15s: Grabación de pantalla del proceso en ChatGPT o Claude.
-    - 15-20s: Autor volviendo a cámara.
-*   **CTA:** "Si quieres mi guía de los 5 prompts esenciales, dale like y comenta **'PROMPTS'**."
+    "Pestañea y te lo pierdes: 'Actúa como asistente ejecutivo. Resume esta minuta en: 3 acuerdos, 5 tareas y el correo para el equipo'. 
+    Listo. Ahorraste 40 minutos de redacción. 
+    Así se usa la tecnología a tu favor."
+*   **Visuales:** Grabación de pantalla modo turbo (2x velocidad).
+*   **CTA:** "Comenta **'PROMPT'** y te mando mi guía gratuita."
 
 ### Video 2 (PM): Ahorro Excel (Demostración)
 *   **Hook (0-2s):** "Le saqué un cacho de 5 horas a un cliente con una sola instrucción en Excel."
 *   **Diálogo:** 
-    "Mucha gente no sabe que la IA puede escribir macros complejas o limpiar bases de datos desordenadas en segundos.
-    Le pedimos: 'Crea un script para consolidar estas 12 pestañas y resaltar los valores atípicos'. 
-    Listo. En vez de una tarde perdida, fueron 10 segundos de procesamiento.
+    "No pelees más con las fórmulas. 
+    Le pedimos a la IA: 'Limpia esta base de datos y crea el reporte de ventas'. 
+    Lo que tomaba una tarde, ahora toma lo que dura este video. 
     Deja de ser un esclavo de las celdas."
-*   **Visuales:** 
-    - 0-3s: Grabación de una planilla de Excel gigante.
-    - 3-12s: ChatGPT devolviendo el código o la solución.
-    - 12-18s: Autor sonriendo, tono relajado.
-*   **CTA:** "Comenta **'EXCEL'** si pasas más de 3 horas al día en planillas."
+*   **Visuales:** Imagen de planilla desordenada -> Planilla perfecta.
+*   **CTA:** "Comenta **'EXCEL'** si odias las macros."
 
 ---
 
@@ -126,30 +101,22 @@
 ### Video 1 (AM): Caso Miguel (Prueba Social)
 *   **Hook (0-2s):** "Miguel pasaba de largo todos los viernes por la pega. Ahora cierra a las 6 y se va a la casa."
 *   **Diálogo:** 
-    "Miguel es gerente comercial. Tenía el escritorio lleno de reportes pendientes. 
-    Aplicamos nuestro método ADN Digital: identificamos sus tareas repetitivas, entrenamos una IA con sus documentos y automatizamos su reporte semanal.
-    Resultado: 20 horas liberadas al mes. 
-    La IA no le quitó el trabajo, le devolvió su vida."
-*   **Visuales:** 
-    - 0-3s: Texto "CASO REAL: MIGUEL (GERENTE)".
-    - 3-12s: Gráfico simple de barras: "Antes 12h / Después 8h".
-    - 12-20s: Autor hablando genuinamente.
-*   **CTA:** "¿Quieres resultados como los de Miguel? El link para agendar está en mi bio."
+    "Miguel es gerente. Tenía el escritorio tapado en papeles. 
+    Instalamos su ADN Digital y automatizamos sus reportes. 
+    Hoy recuperó 20 horas al mes para su familia. 
+    No es trabajar más, es trabajar inteligente."
+*   **Visuales:** Gráfico de "Tiempo con la familia" subiendo.
+*   **CTA:** "Quieres este cambio? Link en bio."
 
 ### Video 2 (PM): Hack de la Mañana (Productividad)
-*   **Hook (0-2s):** (Sosteniendo el celular) "¿Quieres ver cómo hackeamos la mañana de un profesional de alto rendimiento?"
+*   **Hook (0-2s):** "¿Quieres ver cómo hackeamos la mañana de un gerente senior?"
 *   **Diálogo:** 
-    "No se trata de hacer más, se trata de elegir mejor.
-    Usamos una herramienta de IA para filtrar todas las notificaciones y correos de la noche, y nos entrega un resumen de: 
-    1. Lo que requiere acción hoy.
-    2. Lo que puede esperar.
-    3. Lo que es ruido.
-    Empezar el día con claridad vale más que cualquier café doble."
-*   **Visuales:** 
-    - 0-4s: Mostrando el celular a cámara.
-    - 4-12s: Lista de tareas siendo tachada o clasificada.
-    - 12-18s: Autor listo para empezar el día.
-*   **CTA:** "Comenta **'SESIÓN'** si quieres que optimicemos tu agenda juntos."
+    "Cero notificaciones, cero estrés. 
+    Mi IA filtra todo el ruido y me entrega solo lo que importa: 1. Urgente, 2. Importante, 3. Basura. 
+    Planifico mi día en 2 minutos. 
+    Empieza el lunes ganando."
+*   **Visuales:** Tu cara relajada vs un celular vibrando como loco.
+*   **CTA:** "Comenta **'SESIÓN'** para optimizar tu agenda."
 
 ---
 
@@ -158,55 +125,42 @@
 ### Video 1 (AM): Mi Setup (Autoridad)
 *   **Hook (0-2s):** "¿Crees que necesitas un PC de la NASA para usar IA? Te estai pegando el show. Mira esto."
 *   **Diálogo:** 
-    "Este es mi 'laboratorio'. Una laptop normal, una buena conexión a internet y, sobre todo, curiosidad.
-    No necesitas servidores en la NASA. Todo lo que te enseño ocurre en la nube.
-    El verdadero poder no está en el hardware, está en saber qué preguntar. 
-    Si tienes un navegador Chrome, ya tienes todo lo necesario."
-*   **Visuales:** 
-    - 0-5s: Recorrido rápido por el escritorio (minimalista, limpio).
-    - 5-15s: Mostrando la pantalla de la laptop.
-    - 15-20s: Autor apuntando a su frente (el conocimiento).
-*   **CTA:** "Dale like si también pensabas que necesitabas ser programador."
+    "Mi laboratorio es este: una laptop y conexión a internet. 
+    No necesitas ser programador ni genio matemático. 
+    Solo necesitas saber qué preguntar. 
+    El poder está en tu cabeza, no en el hardware."
+*   **Visuales:** Setup minimalista, luz natural.
+*   **CTA:** "Like si pensabas que la IA era difícil."
 
 ### Video 2 (PM): Errores de Novato (Valor)
 *   **Hook (0-2s):** "No te compren la pomada: 3 herramientas de IA que son una pérdida de tiempo total."
 *   **Diálogo:** 
-    "Primero: Generadores de avatares bailando. Divertido, pero no ayuda a tu negocio.
-    Segundo: Resumidores genéricos que omiten los detalles técnicos importantes.
-    Tercero: Bots de chat que solo repiten lo que dice Wikipedia.
-    En ConsultorIA filtramos el ruido para darte solo lo que genera retorno de inversión real."
-*   **Visuales:** 
-    - 0-3s: Texto "IA HUMO vs IA REAL".
-    - 3-15s: Lista de 3 cosas tachadas con una 'X' roja.
-    - 15-22s: Autor con tono serio y profesional.
-*   **CTA:** "Sígueme para dejar de perder tiempo con juguetes y empezar a usar herramientas."
+    "1. Avatares que bailan: Lindo, pero no vende. 
+    2. Resúmenes mediocres: Te hacen perder el detalle importante. 
+    3. Bots de juguete: Solo repiten Wikipedia. 
+    En ConsultorIA filtramos el ruido. Solo lo que da plata."
+*   **Visuales:** 'X' roja gigante sobre logos de apps genéricas.
+*   **CTA:** "Sígueme para ver herramientas de verdad."
 
 ---
 
 ## 🗓️ DOMINGO: El Gran Reto / Comunidad
 
 ### Video 1 (AM): ¿IA o Humano? (Viral)
-*   **Hook (0-2s):** "¿Puedes distinguir qué parte de lo que dije en este video fue escrito por una IA y qué parte por mí?"
+*   **Hook (0-2s):** "¿Puedes decirme qué parte de este video fue escrita por una IA?"
 *   **Diálogo:** 
-    "La línea se está volviendo invisible. Pero aquí está lo importante: 
-    A tu cliente no le importa si usaste IA. Le importa si resolviste su problema a tiempo y con calidad.
-    La IA es el pincel, tú sigues siendo el artista.
-    ¿Te atreves a adivinar la frase 'artificial' de este guion?"
-*   **Visuales:** 
-    - 0-5s: Zoom in lento al autor.
-    - 5-15s: Efecto de glitch digital muy sutil.
-    - 15-22s: Autor sonriendo, desafiante.
-*   **CTA:** "Vota en los comentarios: ¿Humano o IA?"
+    "La IA es solo el pincel; tú sigues siendo el artista. 
+    Al cliente no le importa el código, le importa el resultado. 
+    ¿Te atreves a adivinar la frase artificial de hoy? 
+    Piénsalo bien."
+*   **Visuales:** Edición glitchy, zoom in y out dinámico.
+*   **CTA:** "Vota: ¿Humano o IA?"
 
 ### Video 2 (PM): Revelación / Cierre de Semana
-*   **Hook (0-2s):** "Revelación: El guion que viste hoy fue una colaboración 100% entre una IA y yo."
+*   **Hook (0-2s):** "Revelación: Este guion fue 100% colaborativo entre una IA y yo."
 *   **Diálogo:** 
-    "Le di mis ideas, ella las estructuró, yo les puse mi tono chileno y profesional.
-    Así es como se trabaja en 2026. Es colaboración, no competencia.
-    Mañana lunes empezamos la Semana 1 oficialmente y no quieres perderte lo que viene. 
-    Vamos a transformar tu forma de trabajar."
-*   **Visuales:** 
-    - 0-4s: Mostrando la pantalla con el prompt y el guion.
-    - 4-12s: Autor cerrando la laptop.
-    - 12-20s: Texto: "SEMANA 1 - MAÑANA 07:00 AM".
-*   **CTA:** "Prepárate. Mañana a las 7 AM sale el primer video."
+    "Ideas mías, estructura de ella, tono chileno puesto a mano. 
+    Así se trabaja en 2026. Es potenciar tu talento, no reemplazarlo. 
+    Mañana lanzamos la Semana 1. ¿Estás listo?"
+*   **Visuales:** Guiño a cámara, pantalla de despedida con logo ConsultorIA.
+*   **CTA:** "Primer video mañana 7 AM. ¡Nos vemos!"
