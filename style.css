@@ -167,6 +167,22 @@ nav {
     box-shadow: 0 15px 35px rgba(15, 23, 42, 0.4);
 }
 
+.btn-instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+    color: var(--white) !important;
+    box-shadow: 0 10px 25px rgba(220, 39, 67, 0.3);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+}
+
+.btn-instagram:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(220, 39, 67, 0.4);
+}
+
 .hero-image {
     position: relative;
 }
@@ -1226,6 +1242,12 @@ footer {
     color: var(--accent);
     background: #eff6ff;
     border-color: rgba(59, 130, 246, 0.2);
+}
+
+.contact-mini-btn.instagram:hover {
+    color: white;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    border-color: rgba(220, 39, 67, 0.2);
 }
 
 @media (max-width: 768px) {
