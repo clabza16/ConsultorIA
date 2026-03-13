@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Notion: ConsultorIA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #3b82f6;
+            --accent: #f59e0b;
+            --bg-dark: #0f172a;
+            --text-light: #f8fafc;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+            }
+
+            .content-box {
+                border: 1px solid #ddd !important;
+                box-shadow: none !important;
+                background: white !important;
+            }
+
+            .header {
+                background: #f1f5f9 !important;
+                -webkit-print-color-adjust: exact;
+            }
+
+            h1,
+            h2,
+            h3 {
+                color: #1e293b !important;
+            }
+
+            .alert {
+                border: 1px solid #cbd5e1 !important;
+                color: black !important;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            .step-list li {
+                border-left: 3px solid #2563eb !important;
+                background: #f8fafc !important;
+                color: black !important;
+            }
+
+            code {
+                background: #f1f5f9 !important;
+                color: #b45309 !important;
+                border: 1px solid #ddd !important;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+            border-radius: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-top: 10px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            border-left: 4px solid var(--primary);
+            padding-left: 15px;
+            margin-bottom: 25px;
+            color: #60a5fa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .content-box {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            color: #f59e0b;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        h4 {
+            color: #60a5fa;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .alert {
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .alert-note {
+            background: rgba(37, 99, 235, 0.1);
+            border-left: 4px solid var(--primary);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .alert-tip {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .alert-important {
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        code {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #fbbf24;
+            font-weight: 600;
+        }
+
+        .prompt-box {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px dashed #3b82f6;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-style: italic;
+            color: #e2e8f0;
+        }
+
+        .step-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .step-list li {
+            background: rgba(255, 255, 255, 0.02);
+            margin-bottom: 12px;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .step-number {
+            font-weight: 800;
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: rgba(37, 99, 235, 0.2);
+            color: #60a5fa;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        blockquote {
+            margin: 20px 0;
+            padding: 15px 25px;
+            border-left: 4px solid var(--accent);
+            background: rgba(245, 158, 11, 0.05);
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Guía de Inteligencia en Notion</h1>
+            <div class="subtitle">Especialización de Flujos de Trabajo: ConsultorIA - Clases 1 y 2</div>
+        </div>
+
+        <!-- CLASE 1: ADN DIGITAL EN NOTION -->
+        <div class="section">
+            <h2 class="section-title">Clase 1: ADN Digital en el Ecosistema Notion</h2>
+            
+            <div class="content-box">
+                <p>¡Hola! Esta sesión está personalizada para ti, que ya usas Notion como tu centro de operaciones. Hoy vamos a transformar tu espacio de trabajo en una extensión de tu cerebro, integrando la inteligencia de <strong>Gemini</strong> con la estructura de <strong>Notion AI</strong>.</p>
+                
+                <div class="alert alert-note">
+                    <strong>La Clave de Hoy:</strong> Usaremos Gemini para "pensar" y Notion para "construir".
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h3>1. El Nuevo Paradigma: Notion AI vs Gemini</h3>
+                <p>No son competencia, son <strong>socios</strong>. Imagínalos así:</p>
+                <ul>
+                    <li><strong>Gemini:</strong> Tu "Consultor Externo". Es mejor para investigar el mundo exterior, crear ideas desde cero y analizar archivos pesados.</li>
+                    <li><strong>Notion AI:</strong> Tu "Asistante Interno". Conoce tus páginas, tus bases de datos y es el experto en organizar y redactar <em>dentro</em> de tu flujo de trabajo.</li>
+                </ul>
+            </div>
+
+            <div class="content-box">
+                <h3>2. Configuración: Tu Centro de Mando</h3>
+                <p>Para que esto funcione, asegúrate de tener:</p>
+                <ul class="step-list">
+                    <li><span class="step-number">1</span> <strong>Explorador:</strong> Chrome con sesión iniciada en <code>gemini.google.com</code>.</li>
+                    <li><span class="step-number">2</span> <strong>Notion:</strong> Tu espacio de trabajo abierto y con la función de <strong>AI activada</strong> (prueba escribiendo <code>/ai</code> o presionando <code>Space</code>).</li>
+                    <li><span class="step-number">3</span> <strong>Captura Rápida:</strong> Instala la App de Notion en tu móvil para digitalizar notas físicas directamente a tu base de datos.</li>
+                </ul>
+            </div>
+
+            <div class="content-box">
+                <h3>3. Taller: Tu ADN Digital en Notion</h3>
+                <p>Vamos a crear una página llamada <strong>"Mi Cerebro Profesional"</strong>. Esta página será la fuente de verdad para toda la IA que uses.</p>
+
+                <h4>Paso 1: La Entrevista (en Gemini)</h4>
+                <p>Copia este prompt en Gemini:</p>
+                <div class="prompt-box">
+                    "Actúa como un experto en estrategia. Hazme una entrevista de 5 preguntas, una a una, para definir mi perfil profesional, mis desafíos en Notion y mi estilo de comunicación. Al terminar, genera un resumen estructurado llamado 'Manual de Identidad Profesional'."
+                </div>
+
+                <h4>Paso 2: El Ancla en Notion</h4>
+                <p>Lleva ese resumen a una página nueva en Notion. Ahora, cada vez que le pidas algo a la IA de Notion, dile:</p>
+                <blockquote>"Basándote en mi página de 'Manual de Identidad Profesional', redacta..."</blockquote>
+            </div>
+
+            <div class="content-box">
+                <h3>4. El Método R.T.C.E. aplicado a Notion</h3>
+                <p>Notion AI brilla cuando le das contexto inmediato. Usa el comando <code>/ai</code> y sigue esta estructura:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parte</th>
+                            <th>Qué significa</th>
+                            <th>Ejemplo para Notion AI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Rol</strong></td>
+                            <td>Quién es la IA</td>
+                            <td>"Como mi estratega de contenido..."</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tarea</strong></td>
+                            <td>¿Qué debe hacer?</td>
+                            <td>"...redacta una propuesta de proyecto..."</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Contexto</strong></td>
+                            <td>¿Qué hay en Notion?</td>
+                            <td>"...usa los datos de la tabla de 'Presupuestos' arriba..."</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Entrega</strong></td>
+                            <td>¿Cómo debe ser?</td>
+                            <td>"...en formato de tabla con 3 columnas."</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="content-box">
+                <h3>5. Captura y Visión: De la Pizarra a la Base de Datos</h3>
+                <p>¿Notas a mano o fotos de pizarras? Notion AI tiene una ventaja: <strong>Digitalización Estructural</strong>.</p>
+                <ul class="step-list">
+                    <li><span class="step-number">1</span> Sube la foto a una página de Notion.</li>
+                    <li><span class="step-number">2</span> Presiona <code>Space</code> (AI) y selecciona <strong>"Extraer texto"</strong>.</li>
+                    <li><span class="step-number">3</span> Luego pide: <em>"Convierte este texto en una base de datos con columnas para Tarea, Responsable y Fecha Límite."</em></li>
+                </ul>
+            </div>
+
+            <div class="alert alert-tip">
+                <strong>Reto de Clase 1:</strong> Toma una página de proyecto que tengas desordenada. Selecciona todo el texto y usa Notion AI con el prompt: <em>"Limpia esto, aplica mi tono profesional y crea una lista de verificación de próximos pasos."</em>
+            </div>
+        </div>
+
+        <!-- CLASE 2: EQUIPO DIGITAL HÍBRIDO -->
+        <div class="section">
+            <h2 class="section-title">Clase 2: Tu Equipo Digital Híbrido (Gemini + Notion)</h2>
+
+            <div class="content-box">
+                <p>¡Bienvenido a la especialización! Hoy vamos a dejar de usar la IA para "preguntar" y empezaremos a usarla para <strong>"ejecutar"</strong>. Vamos a construir un flujo de trabajo donde la información fluye sola.</p>
+            </div>
+
+            <div class="content-box">
+                <h3>1. Deep Research Híbrido: El "Buceo" y la "Red"</h3>
+                <ul>
+                    <li><strong>Paso 1 (Gemini):</strong> Usa Gemini para realizar investigaciones profundas sobre temas de mercado o competencia.</li>
+                    <li><strong>Paso 2 (Notion AI):</strong> Pega ese reporte en Notion y usa <code>/ai</code> para <strong>conectar</strong> esa información con tus proyectos actuales.</li>
+                </ul>
+                <h4>Prompt de Conexión (en Notion):</h4>
+                <div class="prompt-box">
+                    "Analiza este reporte de Gemini y dime cómo afecta específicamente a mi página de 'Estrategia 2026'. Crea una columna en mi base de datos de 'Riesgos' con estas nuevas variables."
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h3>2. Bases de Datos Inteligentes (Notion AI Autofill)</h3>
+                <p>Notion tiene una función secreta: la IA puede trabajar en las sombras de tus tablas.</p>
+                <ul class="step-list">
+                    <li><span class="step-number">1</span> Crea una base de datos para tus clientes o proyectos.</li>
+                    <li><span class="step-number">2</span> Agrega una propiedad de tipo <strong>"AI Summary"</strong> o <strong>"AI Custom Edit"</strong>.</li>
+                    <li><span class="step-number">3</span> Configura la IA para que: <em>"Lea el contenido de la página y extraiga automáticamente el sentimiento del cliente o la fecha clave mencionada."</em></li>
+                </ul>
+            </div>
+
+            <div class="content-box">
+                <h3>3. Gems vs Notion AI: El Dream Team</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Herramienta</th>
+                            <th>Cuándo usarla</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Gems (Gemini)</strong></td>
+                            <td>Cuando necesitas que la IA actúe como un <strong>Especialista Externo</strong> (ej: Auditor Legal, Experto en Marketing) para archivos que NO están en Notion.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Notion AI</strong></td>
+                            <td>Cuando necesitas un <strong>Asistente Operativo</strong> que trabaje sobre tus notas, tareas y calendarios internos.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="content-box">
+                <h3>4. El Clon de Estilo en el Editor de Notion</h3>
+                <p>Notion AI permite aplicar tonos personalizados de forma masiva.</p>
+                <h4>Taller de Estilo:</h4>
+                <ul class="step-list">
+                    <li><span class="step-number">1</span> En una página de Notion, escribe 5 ejemplos de tu estilo.</li>
+                    <li><span class="step-number">2</span> Usa el menú de AI: <strong>"Aprender mi tono"</strong>.</li>
+                    <li><span class="step-number">3</span> A partir de ahora, cada vez que redactes un memo o página informativa, selecciona el texto y elige <strong>"Aplicar mi tono"</strong>.</li>
+                </ul>
+            </div>
+
+            <div class="content-box">
+                <h3>5. Extensiones y Ecosistema (Workspace)</h3>
+                <p>Recuerda que con Gemini puedes invocar a tu ecosistema Google para alimentar tu Notion:</p>
+                <ul>
+                    <li><strong>@Google Drive:</strong> <em>"Resume el PDF de facturas y dame la tabla de totales para pegarla en mi Notion."</em></li>
+                    <li><strong>@Gmail:</strong> <em>"Busca el feedback del cliente y redacta la respuesta en Notion para que mi equipo la apruebe."</em></li>
+                </ul>
+            </div>
+
+            <div class="alert alert-important">
+                <strong>Reto de Clase 2:</strong> Crea un "Dashboard de Inteligencia" en Notion donde la IA de base de datos actualice el estado de tus proyectos basándose en tus notas diarias.
+            </div>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 ConsultorIA - Resultados que se sienten como magia.
+            <br>
+            <em>Donde tu organización se encuentra con la inteligencia infinita.</em>
+        </div>
+    </div>
+</body>
+
+</html>
